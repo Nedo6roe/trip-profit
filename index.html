@@ -17,8 +17,15 @@ button{font-family:inherit;cursor:pointer}
 .hdr h1{margin:0}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:16px}
 .f label{display:block;font-size:12px;color:var(--mut);margin:0 0 5px}
-.f input{width:100%;height:44px;background:var(--card);border:1px solid var(--line2);color:#fff;border-radius:10px;padding:0 12px;font-size:16px;font-family:inherit;color-scheme:dark}
-.f input:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 2px rgba(62,224,168,0.25)}
+.f input,.f select{width:100%;height:44px;background:var(--card);border:1px solid var(--line2);color:#fff;border-radius:10px;padding:0 12px;font-size:16px;font-family:inherit;color-scheme:dark}
+.f select{padding:0 6px}
+.f input:focus,.f select:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 2px rgba(62,224,168,0.25)}
+.route{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
+.cnt{display:flex;align-items:center;height:44px;background:var(--card);border:1px solid var(--line2);border-radius:10px;overflow:hidden}
+.cnt button{width:44px;height:100%;background:transparent;border:none;color:var(--mint);font-size:22px;line-height:1;padding:0}
+.cnt button:active{background:#1f1f1f}
+.cnt button:disabled{color:#444;cursor:default}
+.cnt span{flex:1;text-align:center;font-size:16px;font-weight:600}
 .f.full{grid-column:1 / -1}
 .err{font-size:12px;color:var(--red2);margin-top:4px;min-height:0}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px}
@@ -72,6 +79,11 @@ nav button.on{color:var(--mint)}
 
   <div class="grid">
     <div class="f full"><label for="dt">Дата рейса</label><input id="dt" type="date"></div>
+    <div class="route">
+      <div class="f"><label for="pu">Pickup</label><select id="pu"><option value="">Штат</option></select></div>
+      <div class="f"><label for="de">Delivery</label><select id="de"><option value="">Штат</option></select></div>
+      <div class="f"><label>Stops</label><div class="cnt"><button type="button" id="minus" aria-label="Меньше Stops" disabled>&minus;</button><span id="sv">0</span><button type="button" id="plus" aria-label="Больше Stops">+</button></div></div>
+    </div>
     <div class="f"><label for="lm">Loaded Miles (с грузом)</label><input id="lm" type="number" inputmode="decimal" min="0" placeholder="800"></div>
     <div class="f"><label for="dm">Deadhead Miles (пустым)</label><input id="dm" type="number" inputmode="decimal" min="0" placeholder="100"></div>
     <div class="f"><label for="lr">Load rate, $</label><input id="lr" type="number" inputmode="decimal" min="0" placeholder="2400"></div>
@@ -202,6 +214,26 @@ function plural(n) {
 var MON = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
 var MONF = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 
+var STATES = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
+var STOPS_MAX = 20;
+var stops = 0;
+
+function stopsText(n) { return n + (n === 1 ? ' Stop' : ' Stops'); }
+
+function routeText(t) {
+  if (t.s === undefined && !t.p && !t.v) return 'Маршрут не указан';
+  var n = t.s || 0;
+  if (!t.p && !t.v) return 'Не указано | ' + stopsText(n);
+  return (t.p || '—') + ' → ' + (t.v || '—') + ' | ' + stopsText(n);
+}
+
+function setStops(n) {
+  stops = Math.max(0, Math.min(STOPS_MAX, n));
+  $('sv').textContent = stops;
+  $('minus').disabled = stops <= 0;
+  $('plus').disabled = stops >= STOPS_MAX;
+}
+
 function calcTrip(t) {
   var miles = t.a + t.b;
   var fuel = t.g > 0 ? miles / t.g * t.f : 0;
@@ -254,7 +286,7 @@ function saveTrip() {
   if (t.r <= 0) { msg('Введите Load rate, чтобы сохранить рейс', false); return; }
   if (t.a + t.b <= 0) { msg('Введите мили, чтобы сохранить рейс', false); return; }
   if (t.g <= 0) { msg('Введите MPG больше нуля', false); return; }
-  var rec = { i: Date.now(), d: d, a: t.a, b: t.b, r: t.r, f: t.f, g: t.g, c: t.c, x: t.x };
+  var rec = { i: Date.now(), d: d, a: t.a, b: t.b, r: t.r, f: t.f, g: t.g, c: t.c, x: t.x, p: $('pu').value, v: $('de').value, s: stops };
   var prefix = 'm_' + d.slice(0, 7).replace('-', '_') + '_';
   var key = null, maxIdx = -1;
   Object.keys(chunks).forEach(function (k) {
@@ -365,10 +397,10 @@ function renderTrips() {
     mid.className = 'mid';
     var l1 = document.createElement('div');
     l1.className = 'l1';
-    l1.textContent = 'Gross ' + money(r.gross);
+    l1.textContent = routeText(p.t);
     var l2 = document.createElement('div');
     l2.className = 'l2';
-    l2.textContent = Math.round(r.miles) + ' миль, расходы ' + money(r.costs);
+    l2.textContent = Math.round(r.miles) + ' миль · Gross ' + money(r.gross);
     mid.appendChild(l1);
     mid.appendChild(l2);
     var pf = document.createElement('div');
@@ -407,12 +439,27 @@ function fillDefaults() {
   calcForm();
 }
 
+STATES.forEach(function (s) {
+  ['pu', 'de'].forEach(function (id) {
+    var o = document.createElement('option');
+    o.value = s;
+    o.textContent = s;
+    $(id).appendChild(o);
+  });
+});
+['pu', 'de'].forEach(function (id) { $(id).addEventListener('change', markDirty); });
+$('minus').onclick = function () { setStops(stops - 1); markDirty(); };
+$('plus').onclick = function () { setStops(stops + 1); markDirty(); };
+
 ['dt', 'lm', 'dm', 'lr', 'fp', 'mg', 'cp', 'ex'].forEach(function (id) {
   $(id).addEventListener('input', function () { calcForm(); markDirty(); });
 });
 $('save').onclick = saveTrip;
 $('clr').onclick = function () {
   ['lm', 'dm', 'lr', 'ex'].forEach(function (id) { $(id).value = ''; });
+  $('pu').value = '';
+  $('de').value = '';
+  setStops(0);
   $('dt').value = ymd(new Date());
   calcForm();
   markDirty();
