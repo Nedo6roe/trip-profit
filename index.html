@@ -10,59 +10,83 @@
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px}
 body{padding:16px 16px 96px;max-width:520px;margin:0 auto}
-h1{font-size:18px;font-weight:600;margin:0 0 16px}
+h1{font-size:18px;font-weight:600;margin:0}
+h3{font-size:13px;font-weight:500;color:var(--mut);margin:0 0 6px}
 button{font-family:inherit;cursor:pointer}
 .hdr{display:flex;align-items:center;gap:10px;margin-bottom:16px}
 .logo{width:36px;height:36px;border-radius:50%;background:var(--mint);color:#0B0B0B;display:flex;align-items:center;justify-content:center;flex:none}
-.hdr h1{margin:0}
+.back{width:36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--line2);color:#fff;display:flex;align-items:center;justify-content:center;flex:none;padding:0}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:16px}
 .f label{display:block;font-size:12px;color:var(--mut);margin:0 0 5px}
 .f input,.f select{width:100%;height:44px;background:var(--card);border:1px solid var(--line2);color:#fff;border-radius:10px;padding:0 12px;font-size:16px;font-family:inherit;color-scheme:dark}
 .f select{padding:0 6px}
 .f input:focus,.f select:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 2px rgba(62,224,168,0.25)}
+.f input:disabled,.f select:disabled{opacity:.55}
+.f.full{grid-column:1 / -1}
 .route{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
 .cnt{display:flex;align-items:center;height:44px;background:var(--card);border:1px solid var(--line2);border-radius:10px;overflow:hidden}
 .cnt button{width:44px;height:100%;background:transparent;border:none;color:var(--mint);font-size:22px;line-height:1;padding:0}
 .cnt button:active{background:#1f1f1f}
 .cnt button:disabled{color:#444;cursor:default}
 .cnt span{flex:1;text-align:center;font-size:16px;font-weight:600}
-.f.full{grid-column:1 / -1}
 .err{font-size:12px;color:var(--red2);margin-top:4px;min-height:0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px}
-.rw{display:flex;justify-content:space-between;padding:6px 0;font-size:14px}
-.rw span:last-child{font-weight:500}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:12px}
+.rw{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:14px}
+.rw span:last-child{font-weight:500;text-align:right}
 .rw.tot{border-top:1px solid var(--line2);margin-top:4px;padding-top:10px}
 .pbox{margin-top:10px;padding:12px 14px;border-radius:10px;background:var(--mint-soft);display:flex;justify-content:space-between;align-items:baseline}
 .pbox .lbl{font-size:14px}
 .pbox .big{font-size:24px;font-weight:600;color:var(--mint)}
-.note{font-size:13px;color:var(--mut);margin-top:8px}
+.note{font-size:13px;color:var(--mut);margin-top:8px;line-height:1.4}
 .btn-m{width:100%;height:48px;background:var(--mint);color:#0B0B0B;border:none;border-radius:12px;font-size:16px;font-weight:600}
 .btn-m:active{opacity:.85}
 .btn-m.done{background:#1c3a30;color:var(--mint)}
-.btn-g{width:100%;height:42px;background:transparent;color:#b5b5b5;border:1px solid var(--line2);border-radius:12px;font-size:14px}
+.btn-g{width:100%;height:44px;background:transparent;color:#b5b5b5;border:1px solid var(--line2);border-radius:12px;font-size:14px}
+.btn-d{width:100%;height:44px;background:transparent;color:var(--red2);border:1px solid rgba(242,121,124,0.5);border-radius:12px;font-size:14px}
 .msg{font-size:13px;text-align:center;min-height:20px;margin:8px 0 4px}
-.tabs{display:flex;gap:6px;margin-bottom:6px}
+.tabs{display:flex;gap:6px;margin-bottom:10px}
 .tab{flex:1;height:36px;font-size:13px;background:transparent;border:1px solid var(--line2);color:#b5b5b5;border-radius:8px;padding:0 2px}
 .tab.on{background:var(--mint);color:#0B0B0B;border-color:var(--mint);font-weight:600}
-.sub{font-size:13px;color:var(--mut);text-align:center;margin:0 0 12px;min-height:18px}
-.donut{position:relative;width:200px;height:200px;margin:0 auto 12px}
-.donut .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.lg{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:14px}
-.lg .d{width:12px;height:12px;border-radius:50%;flex:none}
-.lg .v{margin-left:auto;font-weight:500}
-.mets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}
+.pnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.pnav .lab{font-size:14px;font-weight:500;text-align:center}
+.arr{width:36px;height:36px;border-radius:8px;background:transparent;border:1px solid var(--line2);color:#e8e8e8;display:flex;align-items:center;justify-content:center;padding:0}
+.arr:disabled{opacity:.3;cursor:default}
+.arr.gone{visibility:hidden}
+.cards2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.stat .k{font-size:12px;color:var(--mut)}
+.stat .n{font-size:22px;font-weight:600;margin-top:2px}
+.mets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
 .met{background:var(--card);border-radius:10px;padding:10px 12px}
 .met .k{font-size:12px;color:var(--mut)}
 .met .n{font-size:16px;font-weight:600;margin-top:2px}
-.sec{font-size:14px;color:var(--mut);margin:4px 0 8px}
-.trip{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px}
-.trip .dt{font-size:13px;color:var(--mut);min-width:54px}
+.donut{position:relative;width:180px;height:180px;margin:4px auto 10px}
+.donut .c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.brow{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:14px}
+.brow .d{width:10px;height:10px;border-radius:50%;flex:none}
+.brow .v{margin-left:auto;font-weight:500}
+.brow.click{cursor:pointer}
+.sublines{padding:0 0 6px 20px;font-size:13px;color:var(--mut)}
+.sublines div{display:flex;justify-content:space-between;padding:2px 0}
+.sec{font-size:14px;color:var(--mut);margin:14px 0 8px}
+.trip{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px;cursor:pointer;width:100%;text-align:left;color:inherit;font-size:inherit}
+.trip.stopped{opacity:.55}
+.trip .dt{font-size:13px;color:var(--mut);min-width:48px}
 .trip .mid{flex:1;min-width:0}
-.trip .l1{font-size:14px}
+.trip .l1{font-size:15px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .trip .l2{font-size:12px;color:var(--mut)}
 .trip .pf{font-size:15px;font-weight:600;text-align:right}
-.trip .del{background:transparent;border:none;color:var(--mut);padding:6px;display:flex}
-.empty{text-align:center;color:var(--mut);padding:24px 8px;font-size:14px;line-height:1.5}
+.trip .pf small{display:block;font-size:11px;font-weight:400;color:var(--mut)}
+.empty{text-align:center;color:var(--mut);padding:22px 8px;font-size:14px;line-height:1.5}
+.chips{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.chip{height:32px;padding:0 12px;font-size:13px;background:transparent;border:1px solid var(--line2);color:#b5b5b5;border-radius:16px}
+.chip.on{background:var(--mint);color:#0B0B0B;border-color:var(--mint);font-weight:600}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:4px 0 8px;line-height:1.4}
+.chk input{width:20px;height:20px;margin:1px 0 0;accent-color:#3EE0A8;flex:none}
+.hero{text-align:center;margin:4px 0 16px}
+.hero .t{font-size:26px;font-weight:600}
+.hero .s{font-size:14px;color:var(--mut);margin-top:2px}
+.final{background:var(--mint-soft);border:1px solid rgba(62,224,168,0.4);border-radius:14px;padding:14px 16px;margin-bottom:14px}
 nav{position:fixed;left:0;right:0;bottom:0;background:rgba(11,11,11,0.96);border-top:1px solid var(--line);display:flex;padding:8px 16px calc(8px + env(safe-area-inset-bottom));gap:8px;max-width:520px;margin:0 auto}
 nav button{flex:1;background:transparent;border:none;color:var(--mut);display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;padding:4px 0}
 nav button.on{color:var(--mint)}
@@ -74,7 +98,7 @@ nav button.on{color:var(--mint)}
 <section id="scrCalc">
   <div class="hdr">
     <div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg></div>
-    <h1>Калькулятор рейса</h1>
+    <h1 id="calcTitle">Калькулятор рейса</h1>
   </div>
 
   <div class="grid">
@@ -90,21 +114,23 @@ nav button.on{color:var(--mint)}
     <div class="f"><label for="fp">Дизель, $ за галлон</label><input id="fp" type="number" inputmode="decimal" min="0" step="0.01" placeholder="3.80"></div>
     <div class="f"><label for="mg">MPG трака</label><input id="mg" type="number" inputmode="decimal" min="0" step="0.1" placeholder="6.5"><div class="err" id="mgerr"></div></div>
     <div class="f"><label for="cp">Процент компании, %</label><input id="cp" type="number" inputmode="decimal" min="0" placeholder="12"></div>
-    <div class="f full"><label for="ex">Расходы, $ (другие траты за рейс)</label><input id="ex" type="number" inputmode="decimal" min="0" placeholder="150"></div>
+    <div class="f full"><label for="ex">Расходы рейса, $ (другие траты за этот рейс)</label><input id="ex" type="number" inputmode="decimal" min="0" placeholder="150"></div>
   </div>
 
-  <div class="card">
+  <div class="card" style="padding:14px 16px">
     <div class="rw"><span>Топливо</span><span id="rf">$0.00</span></div>
     <div class="rw"><span>Комиссия компании</span><span id="rc">$0.00</span></div>
-    <div class="rw"><span>Расходы</span><span id="re">$0.00</span></div>
-    <div class="rw tot"><span>Всего расходов</span><span id="rt" style="color:var(--red2)">$0.00</span></div>
-    <div class="pbox" id="pbox"><span class="lbl">Вам остаётся</span><span class="big" id="rp">$0.00</span></div>
+    <div class="rw"><span>Расходы рейса</span><span id="re">$0.00</span></div>
+    <div class="rw tot"><span>Всего расходов рейса</span><span id="rt" style="color:var(--red2)">$0.00</span></div>
+    <div class="pbox" id="pbox"><span class="lbl">С рейса остаётся</span><span class="big" id="rp">$0.00</span></div>
     <div class="note" id="rm"></div>
+    <div class="note">Недельные и месячные платежи (trailer, ELD, ремонт) добавляются в «Мои рейсы», кнопка «Общие расходы».</div>
   </div>
 
   <button class="btn-m" id="save">Сохранить рейс</button>
   <div class="msg" id="saved"></div>
   <button class="btn-g" id="clr">Очистить поля</button>
+  <button class="btn-g" id="cancelEdit" hidden>Отмена</button>
 </section>
 
 <section id="scrTrips" hidden>
@@ -118,41 +144,94 @@ nav button.on{color:var(--mint)}
     <button class="tab" data-p="year">Год</button>
     <button class="tab" data-p="all">Всё время</button>
   </div>
-  <p class="sub" id="psub"></p>
+  <div class="pnav">
+    <button class="arr" id="prev" aria-label="Предыдущий период"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <div class="lab" id="plabel"></div>
+    <button class="arr" id="next" aria-label="Следующий период"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
 
-  <div class="card" style="padding:16px">
-    <div class="donut">
-      <svg viewBox="0 0 180 180" width="200" height="200" role="img" aria-label="Круговой график доходов и расходов">
-        <circle cx="90" cy="90" r="70" fill="none" stroke="#1f1f1f" stroke-width="22"/>
-        <g transform="rotate(-90 90 90)" fill="none" stroke-width="22">
-          <circle id="s0" cx="90" cy="90" r="70" stroke="#3EE0A8"/>
-          <circle id="s1" cx="90" cy="90" r="70" stroke="#E5484D"/>
-          <circle id="s2" cx="90" cy="90" r="70" stroke="#F2797C"/>
-          <circle id="s3" cx="90" cy="90" r="70" stroke="#F6A5A7"/>
-        </g>
-      </svg>
-      <div class="c">
-        <div style="font-size:12px;color:var(--mut)">Gross</div>
-        <div style="font-size:22px;font-weight:600" id="gross">$0</div>
-        <div style="font-size:12px;color:var(--mut)" id="trips"></div>
-      </div>
-    </div>
-    <div style="border-top:1px solid var(--line2);padding-top:6px">
-      <div class="lg"><span class="d" style="background:#3EE0A8"></span>Осталось вам<span class="v" style="color:var(--mint)" id="l0"></span></div>
-      <div class="lg"><span class="d" style="background:#E5484D"></span>Топливо<span class="v" id="l1"></span></div>
-      <div class="lg"><span class="d" style="background:#F2797C"></span>Комиссия компании<span class="v" id="l2"></span></div>
-      <div class="lg"><span class="d" style="background:#F6A5A7"></span>Другие расходы<span class="v" id="l3"></span></div>
-    </div>
+  <div class="cards2">
+    <div class="stat"><div class="k">Gross</div><div class="n" id="cg" style="color:#fff"></div></div>
+    <div class="stat"><div class="k">Net Profit</div><div class="n" id="cn"></div></div>
+    <div class="stat"><div class="k">Gross RPM</div><div class="n" id="cgr" style="color:#fff"></div></div>
+    <div class="stat"><div class="k">Net RPM</div><div class="n" id="cnr"></div></div>
   </div>
 
   <div class="mets">
-    <div class="met"><div class="k">Расходы</div><div class="n" style="color:var(--red2)" id="mx"></div></div>
-    <div class="met"><div class="k">Осталось</div><div class="n" style="color:var(--mint)" id="mp"></div></div>
-    <div class="met"><div class="k">Миль</div><div class="n" id="mm"></div></div>
+    <div class="met"><div class="k">Loaded Miles</div><div class="n" id="ml"></div></div>
+    <div class="met"><div class="k">Deadhead Miles</div><div class="n" id="md"></div></div>
+    <div class="met"><div class="k">Total Miles</div><div class="n" id="mt"></div></div>
   </div>
+
+  <div class="card" style="padding:14px 16px">
+    <div class="donut">
+      <svg viewBox="0 0 180 180" width="180" height="180" role="img" aria-label="Круговая диаграмма расходов и чистой прибыли">
+        <circle cx="90" cy="90" r="70" fill="none" stroke="#1f1f1f" stroke-width="22"/>
+        <g id="ring" transform="rotate(-90 90 90)" fill="none" stroke-width="22"></g>
+      </svg>
+      <div class="c">
+        <div style="font-size:12px;color:var(--mut)">Net Profit</div>
+        <div style="font-size:20px;font-weight:600" id="cc"></div>
+        <div style="font-size:12px;color:var(--mut)" id="trips"></div>
+      </div>
+    </div>
+    <div style="font-size:13px;color:var(--mut);margin:4px 0 2px">Расходы за период</div>
+    <div id="brk"></div>
+    <div class="rw tot"><span>Total Expenses</span><span id="te" style="color:var(--red2)"></span></div>
+    <div class="rw"><span>Net Profit</span><span id="tn"></span></div>
+  </div>
+
+  <button class="btn-g" id="openExp" style="height:46px;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px">Общие расходы<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
 
   <div class="sec">Рейсы за период</div>
   <div id="list"></div>
+</section>
+
+<section id="scrDetail" hidden>
+  <div class="hdr">
+    <button class="back" id="bkDetail" aria-label="Назад"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <h1>Детали рейса</h1>
+  </div>
+  <div id="detail"></div>
+</section>
+
+<section id="scrExp" hidden>
+  <div class="hdr">
+    <button class="back" id="bkExp" aria-label="Назад"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <h1>Общие расходы</h1>
+  </div>
+  <div class="note" style="margin:0 0 12px">Платежи, которые не относятся к одному рейсу. Они считаются в итогах недели, месяца и года, даже если рейсов не было.</div>
+  <div class="chips">
+    <button class="chip on" data-f="all">Все</button>
+    <button class="chip" data-f="w">Еженедельные</button>
+    <button class="chip" data-f="m">Ежемесячные</button>
+    <button class="chip" data-f="o">Разовые</button>
+  </div>
+  <div id="xlist"></div>
+  <button class="btn-m" id="xadd" style="margin-top:6px">Добавить расход</button>
+</section>
+
+<section id="scrExpForm" hidden>
+  <div class="hdr">
+    <button class="back" id="bkForm" aria-label="Назад"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <h1 id="xtitle">Добавить расход</h1>
+  </div>
+  <div class="grid" style="margin-bottom:8px">
+    <div class="f full"><label for="xn">Название расхода</label><input id="xn" type="text" list="xnames" autocomplete="off" placeholder="Trailer Rent"></div>
+    <div class="f"><label for="xa">Сумма, $</label><input id="xa" type="number" inputmode="decimal" min="0" placeholder="250"></div>
+    <div class="f"><label for="xf">Периодичность</label><select id="xf"></select></div>
+    <div class="f full"><label for="xs" id="xslabel">Дата начала</label><input id="xs" type="date"></div>
+    <div class="f full" id="xdwbox"><label for="xdw">День недели списания</label><select id="xdw"></select></div>
+    <div class="f full" id="xdmbox"><label for="xdm">День месяца списания (1–31)</label><input id="xdm" type="number" inputmode="numeric" min="1" max="31" placeholder="15"><div class="note" style="margin-top:4px">Если в месяце нет такого дня, платёж спишется в последний день месяца.</div></div>
+    <div class="f full" id="xfromb"><label for="xfrom">Изменение действует с</label><input id="xfrom" type="date"><div class="note" style="margin-top:4px">Прошлые периоды сохранят прежнюю сумму.</div></div>
+  </div>
+  <datalist id="xnames"><option value="Trailer Rent"><option value="ELD"><option value="Cargo Insurance"><option value="Company Fee"><option value="Truck Payment"><option value="Insurance"><option value="Oil Change"><option value="Truck Repair"><option value="Tires"><option value="Towing"></datalist>
+  <label class="chk" id="xfixb"><input type="checkbox" id="xfix"><span>Исправить ошибку: заменить сумму и даты за всё время</span></label>
+  <div class="note" id="xhint" style="margin:0 0 8px">Если ELD или Trailer Rent уже входят в Company Fee, добавьте только один из платежей, иначе они посчитаются дважды.</div>
+  <div class="err" id="xerr" style="min-height:18px;font-size:13px;margin-bottom:6px"></div>
+  <button class="btn-m" id="xsave">Сохранить</button>
+  <button class="btn-g" id="xstop" style="margin-top:10px">Остановить платёж</button>
+  <button class="btn-d" id="xdel" style="margin-top:10px">Удалить расход</button>
 </section>
 
 <nav>
@@ -195,14 +274,36 @@ var store = {
 };
 
 var chunks = {};
+var defs = {};
 var settings = {};
 var CHUNK_MAX = 15;
-var period = 'month';
+var period = 'week';
+var offset = 0;
+var view = 'calc';
+var editing = null;
+var expFilter = 'all';
+var expEditing = null;
+var STATES = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
+var STOPS_MAX = 20;
+var stops = 0;
+var MON = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+var MONG = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+var MONF = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+var WDF = ['воскресенье', 'понедельник', 'вторник', 'среду', 'четверг', 'пятницу', 'субботу'];
+var WDN = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+var WD_ORDER = [1, 2, 3, 4, 5, 6, 0];
+var GEN_COLORS = ['#A33A3E', '#C25A5E', '#7A2A2D', '#D4666A', '#B94449', '#8F3236'];
 
 function $(id) { return document.getElementById(id); }
 function pad(n) { return (n < 10 ? '0' : '') + n; }
 function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
-function money(x) { return '$' + Math.round(x).toLocaleString('en-US'); }
+function parseYmd(s) { var p = s.split('-'); return new Date(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10)); }
+function addDays(s, n) { var p = s.split('-'); return ymd(new Date(+p[0], +p[1] - 1, +p[2] + n)); }
+function dayOfWeek(s) { return parseYmd(s).getDay(); }
+function daysInMonth(y, m) { return new Date(y, m + 1, 0).getDate(); }
+function fmtShort(s) { var p = s.split('-'); return (+p[2]) + ' ' + MON[+p[1] - 1]; }
+function fmtLong(s) { var p = s.split('-'); return (+p[2]) + ' ' + MONG[+p[1] - 1] + ' ' + p[0]; }
+function money(x) { return (x < 0 ? '-$' : '$') + Math.abs(Math.round(x)).toLocaleString('en-US'); }
 function money2(x) { return (x < 0 ? '-$' : '$') + Math.abs(x).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 function num(id) { var x = parseFloat($(id).value); return isFinite(x) && x > 0 ? x : 0; }
 function plural(n) {
@@ -211,22 +312,19 @@ function plural(n) {
   if (a >= 2 && a <= 4 && (b < 12 || b > 14)) return 'рейса';
   return 'рейсов';
 }
-var MON = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
-var MONF = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
-
-var STATES = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
-var STOPS_MAX = 20;
-var stops = 0;
-
+function el(tag, cls, text) {
+  var e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
 function stopsText(n) { return n + (n === 1 ? ' Stop' : ' Stops'); }
-
 function routeText(t) {
   if (t.s === undefined && !t.p && !t.v) return 'Маршрут не указан';
   var n = t.s || 0;
   if (!t.p && !t.v) return 'Не указано | ' + stopsText(n);
   return (t.p || '—') + ' → ' + (t.v || '—') + ' | ' + stopsText(n);
 }
-
 function setStops(n) {
   stops = Math.max(0, Math.min(STOPS_MAX, n));
   $('sv').textContent = stops;
@@ -238,8 +336,9 @@ function calcTrip(t) {
   var miles = t.a + t.b;
   var fuel = t.g > 0 ? miles / t.g * t.f : 0;
   var comp = t.r * t.c / 100;
-  var costs = fuel + comp + t.x;
-  return { miles: miles, fuel: fuel, comp: comp, other: t.x, costs: costs, gross: t.r, profit: t.r - costs };
+  var other = t.x || 0;
+  var costs = fuel + comp + other;
+  return { miles: miles, fuel: fuel, comp: comp, other: other, costs: costs, gross: t.r, profit: t.r - costs };
 }
 
 function calcForm() {
@@ -260,7 +359,7 @@ function calcForm() {
 
 function markDirty() {
   var b = $('save');
-  b.textContent = 'Сохранить рейс';
+  b.textContent = editing ? 'Сохранить изменения' : 'Сохранить рейс';
   b.classList.remove('done');
   $('saved').textContent = '';
 }
@@ -271,13 +370,221 @@ function msg(text, ok) {
   m.style.color = ok ? 'var(--mint)' : 'var(--red2)';
 }
 
-function allTrips() {
+function listAll(map) {
   var out = [];
-  Object.keys(chunks).forEach(function (k) {
-    chunks[k].forEach(function (t) { out.push({ t: t, k: k }); });
+  Object.keys(map).forEach(function (k) {
+    map[k].forEach(function (t) { out.push({ t: t, k: k }); });
   });
   out.sort(function (p, q) { return p.t.d < q.t.d ? 1 : p.t.d > q.t.d ? -1 : q.t.i - p.t.i; });
   return out;
+}
+
+function findTrip(id) {
+  var keys = Object.keys(chunks);
+  for (var i = 0; i < keys.length; i++) {
+    var arr = chunks[keys[i]];
+    for (var j = 0; j < arr.length; j++) if (arr[j].i === id) return { k: keys[i], t: arr[j] };
+  }
+  return null;
+}
+
+function addRec(map, tag, rec, cb) {
+  var prefix = tag + '_' + rec.d.slice(0, 7).replace('-', '_') + '_';
+  var key = null, maxIdx = -1;
+  Object.keys(map).forEach(function (k) {
+    if (k.indexOf(prefix) === 0) {
+      var idx = parseInt(k.slice(prefix.length), 10);
+      if (idx > maxIdx) maxIdx = idx;
+      if (key === null && map[k].length < CHUNK_MAX) key = k;
+    }
+  });
+  if (key === null) key = prefix + (maxIdx + 1);
+  var arr = (map[key] || []).concat([rec]);
+  store.set(key, JSON.stringify(arr), function (ok) {
+    if (ok) map[key] = arr;
+    cb(ok, key);
+  });
+}
+
+function removeRec(map, key, id, cb) {
+  var arr = (map[key] || []).filter(function (t) { return t.i !== id; });
+  var done = function (ok) {
+    if (ok) { if (arr.length) map[key] = arr; else delete map[key]; }
+    cb(ok);
+  };
+  if (arr.length) store.set(key, JSON.stringify(arr), done); else store.remove(key, done);
+}
+
+function updateTrip(key, rec, cb) {
+  var oldPrefix = key.replace(/\d+$/, '');
+  var newPrefix = 'm_' + rec.d.slice(0, 7).replace('-', '_') + '_';
+  if (oldPrefix === newPrefix) {
+    var arr = chunks[key].map(function (t) { return t.i === rec.i ? rec : t; });
+    store.set(key, JSON.stringify(arr), function (ok) {
+      if (ok) chunks[key] = arr;
+      cb(ok);
+    });
+    return;
+  }
+  addRec(chunks, 'm', rec, function (ok, newKey) {
+    if (!ok) { cb(false); return; }
+    removeRec(chunks, key, rec.i, function (ok2) {
+      if (ok2) { cb(true); return; }
+      removeRec(chunks, newKey, rec.i, function () { cb(false); });
+    });
+  });
+}
+
+function askConfirm(text, yesFn) {
+  if (tg && tg.showConfirm && tg.isVersionAtLeast && tg.isVersionAtLeast('6.2')) {
+    tg.showConfirm(text, function (yes) { if (yes) yesFn(); });
+  } else if (confirm(text)) {
+    yesFn();
+  }
+}
+
+/* ---------- расписание общих расходов ---------- */
+
+function verAmount(def, date) {
+  var a = def.ver[0].a;
+  for (var i = 0; i < def.ver.length; i++) if (def.ver[i].from <= date) a = def.ver[i].a;
+  return a;
+}
+
+function charges(def, from, to) {
+  var out = [], d;
+  if (def.f === 'o') {
+    if (def.start >= from && def.start <= to) out.push({ d: def.start, a: def.ver[0].a });
+    return out;
+  }
+  var hi = to;
+  if (def.stop) { var lastOk = addDays(def.stop, -1); if (lastOk < hi) hi = lastOk; }
+  var lo = from > def.start ? from : def.start;
+  if (lo > hi) return out;
+  if (def.f === 'w') {
+    d = addDays(lo, (def.dow - dayOfWeek(lo) + 7) % 7);
+    while (d <= hi) { out.push({ d: d, a: verAmount(def, d) }); d = addDays(d, 7); }
+  } else {
+    var y = +lo.slice(0, 4), m = +lo.slice(5, 7) - 1;
+    for (;;) {
+      var day = Math.min(def.dom, daysInMonth(y, m));
+      d = y + '-' + pad(m + 1) + '-' + pad(day);
+      if (d > hi) break;
+      if (d >= lo) out.push({ d: d, a: verAmount(def, d) });
+      m++;
+      if (m > 11) { m = 0; y++; }
+    }
+  }
+  return out;
+}
+
+function periodRange(p, off) {
+  var today = ymd(new Date());
+  var from, to, label;
+  if (p === 'week') {
+    var dow = (dayOfWeek(today) + 6) % 7;
+    from = addDays(today, -dow + 7 * off);
+    to = addDays(from, 6);
+    var a = from.split('-'), b = to.split('-');
+    if (a[1] === b[1]) label = (+a[2]) + '–' + (+b[2]) + ' ' + MONG[+b[1] - 1] + ' ' + b[0];
+    else label = (+a[2]) + ' ' + MON[+a[1] - 1] + ' – ' + (+b[2]) + ' ' + MON[+b[1] - 1] + ' ' + b[0];
+  } else if (p === 'month') {
+    var n = new Date(parseYmd(today).getFullYear(), parseYmd(today).getMonth() + off, 1);
+    from = ymd(n);
+    to = ymd(new Date(n.getFullYear(), n.getMonth() + 1, 0));
+    label = MONF[n.getMonth()] + ' ' + n.getFullYear();
+  } else if (p === 'year') {
+    var y = parseYmd(today).getFullYear() + off;
+    from = y + '-01-01';
+    to = y + '-12-31';
+    label = String(y);
+  } else {
+    from = '0000-00-00';
+    to = '9999-12-31';
+    label = 'Все сохранённые данные';
+  }
+  return { from: from, to: to, label: label, today: today };
+}
+
+function computeStats(rg) {
+  var items = listAll(chunks).filter(function (p) { return p.t.d >= rg.from && p.t.d <= rg.to; });
+  var s = { items: items, gross: 0, loaded: 0, dead: 0, fuel: 0, comp: 0, other: 0, gen: [], genTotal: 0 };
+  items.forEach(function (p) {
+    var r = calcTrip(p.t);
+    s.gross += r.gross; s.loaded += p.t.a; s.dead += p.t.b;
+    s.fuel += r.fuel; s.comp += r.comp; s.other += r.other;
+  });
+  var cto = rg.to < rg.today ? rg.to : rg.today;
+  Object.keys(defs).forEach(function (id) {
+    var d = defs[id], ch = charges(d, rg.from, cto);
+    if (!ch.length) return;
+    var tot = 0;
+    ch.forEach(function (c) { tot += c.a; });
+    s.gen.push({ def: d, ch: ch, total: tot });
+    s.genTotal += tot;
+  });
+  s.gen.sort(function (p, q) { return p.def.n < q.def.n ? -1 : p.def.n > q.def.n ? 1 : 0; });
+  s.costs = s.fuel + s.comp + s.other + s.genTotal;
+  s.net = s.gross - s.costs;
+  s.miles = s.loaded + s.dead;
+  return s;
+}
+
+/* ---------- экраны ---------- */
+
+function resetCalcMode() {
+  $('calcTitle').textContent = 'Калькулятор рейса';
+  $('save').textContent = 'Сохранить рейс';
+  $('save').classList.remove('done');
+  $('cancelEdit').hidden = true;
+  $('clr').hidden = false;
+  $('saved').textContent = '';
+}
+
+function resetForm() {
+  ['lm', 'dm', 'lr', 'ex'].forEach(function (id) { $(id).value = ''; });
+  $('pu').value = '';
+  $('de').value = '';
+  setStops(0);
+  $('dt').value = ymd(new Date());
+  $('fp').value = settings.f || '';
+  $('mg').value = settings.g || '';
+  $('cp').value = (settings.c !== undefined && settings.c !== null) ? settings.c : '';
+  calcForm();
+}
+
+function syncBack() {
+  if (!tg || !tg.BackButton) return;
+  var inner = view === 'detail' || view === 'exp' || view === 'expForm' || (view === 'calc' && editing);
+  try { if (inner) tg.BackButton.show(); else tg.BackButton.hide(); } catch (e) {}
+}
+
+function show(v) {
+  view = v;
+  $('scrCalc').hidden = v !== 'calc';
+  $('scrTrips').hidden = v !== 'trips';
+  $('scrDetail').hidden = v !== 'detail';
+  $('scrExp').hidden = v !== 'exp';
+  $('scrExpForm').hidden = v !== 'expForm';
+  var calcTab = v === 'calc' && !editing;
+  $('nCalc').classList.toggle('on', calcTab);
+  $('nTrips').classList.toggle('on', !calcTab);
+  syncBack();
+  window.scrollTo(0, 0);
+}
+
+function goBack() {
+  if (view === 'detail' || view === 'exp') { openTrips(); }
+  else if (view === 'expForm') { openExp(); }
+  else if (view === 'calc' && editing) { cancelEdit(); }
+}
+
+function cancelEdit() {
+  var id = editing ? editing.id : null;
+  editing = null;
+  resetCalcMode();
+  resetForm();
+  if (id !== null && findTrip(id)) openDetail(id); else openTrips();
 }
 
 function saveTrip() {
@@ -286,23 +593,22 @@ function saveTrip() {
   if (t.r <= 0) { msg('Введите Load rate, чтобы сохранить рейс', false); return; }
   if (t.a + t.b <= 0) { msg('Введите мили, чтобы сохранить рейс', false); return; }
   if (t.g <= 0) { msg('Введите MPG больше нуля', false); return; }
-  var rec = { i: Date.now(), d: d, a: t.a, b: t.b, r: t.r, f: t.f, g: t.g, c: t.c, x: t.x, p: $('pu').value, v: $('de').value, s: stops };
-  var prefix = 'm_' + d.slice(0, 7).replace('-', '_') + '_';
-  var key = null, maxIdx = -1;
-  Object.keys(chunks).forEach(function (k) {
-    if (k.indexOf(prefix) === 0) {
-      var idx = parseInt(k.slice(prefix.length), 10);
-      if (idx > maxIdx) maxIdx = idx;
-      if (key === null && chunks[k].length < CHUNK_MAX) key = k;
-    }
-  });
-  if (key === null) key = prefix + (maxIdx + 1);
-  var arr = (chunks[key] || []).concat([rec]);
+  var rec = { i: editing ? editing.id : Date.now(), d: d, a: t.a, b: t.b, r: t.r, f: t.f, g: t.g, c: t.c, x: t.x, p: $('pu').value, v: $('de').value, s: stops };
   $('save').disabled = true;
-  store.set(key, JSON.stringify(arr), function (ok) {
+  if (editing) {
+    updateTrip(editing.k, rec, function (ok) {
+      $('save').disabled = false;
+      if (!ok) { msg('Не удалось сохранить, попробуйте ещё раз', false); return; }
+      editing = null;
+      resetCalcMode();
+      resetForm();
+      openDetail(rec.i);
+    });
+    return;
+  }
+  addRec(chunks, 'm', rec, function (ok) {
     $('save').disabled = false;
     if (!ok) { msg('Не удалось сохранить, попробуйте ещё раз', false); return; }
-    chunks[key] = arr;
     settings = { f: t.f, g: t.g, c: t.c };
     store.set('s', JSON.stringify(settings), function () {});
     var b = $('save');
@@ -312,132 +618,439 @@ function saveTrip() {
   });
 }
 
-function deleteTrip(key, id) {
-  var arr = (chunks[key] || []).filter(function (t) { return t.i !== id; });
-  var done = function (ok) {
-    if (!ok) return;
-    if (arr.length) chunks[key] = arr; else delete chunks[key];
-    renderTrips();
-  };
-  if (arr.length) store.set(key, JSON.stringify(arr), done); else store.remove(key, done);
+function startEdit(id) {
+  var ref = findTrip(id);
+  if (!ref) return;
+  var t = ref.t;
+  editing = { k: ref.k, id: id };
+  $('dt').value = t.d;
+  $('pu').value = t.p || '';
+  $('de').value = t.v || '';
+  setStops(t.s || 0);
+  $('lm').value = t.a || '';
+  $('dm').value = t.b || '';
+  $('lr').value = t.r || '';
+  $('fp').value = t.f || '';
+  $('mg').value = t.g || '';
+  $('cp').value = t.c || '';
+  $('ex').value = t.x || '';
+  $('calcTitle').textContent = 'Редактировать рейс';
+  $('save').textContent = 'Сохранить изменения';
+  $('save').classList.remove('done');
+  $('cancelEdit').hidden = false;
+  $('clr').hidden = true;
+  $('saved').textContent = '';
+  calcForm();
+  show('calc');
 }
 
-function askDelete(key, id) {
-  if (tg && tg.showConfirm && tg.isVersionAtLeast && tg.isVersionAtLeast('6.2')) {
-    tg.showConfirm('Удалить этот рейс?', function (yes) { if (yes) deleteTrip(key, id); });
-  } else if (confirm('Удалить этот рейс?')) {
-    deleteTrip(key, id);
-  }
+function deleteTrip(id) {
+  var ref = findTrip(id);
+  if (!ref) { openTrips(); return; }
+  askConfirm('Удалить этот рейс?', function () {
+    removeRec(chunks, ref.k, id, function (ok) {
+      if (ok) openTrips();
+    });
+  });
 }
 
-function periodRange(p) {
-  var now = new Date(), today = ymd(now), from = '0000-00-00', label = 'Все сохранённые рейсы';
-  if (p === 'week') {
-    var dow = (now.getDay() + 6) % 7;
-    var s = new Date(now.getFullYear(), now.getMonth(), now.getDate() - dow);
-    var e = new Date(s.getFullYear(), s.getMonth(), s.getDate() + 6);
-    from = ymd(s);
-    label = s.getDate() + ' ' + MON[s.getMonth()] + ' – ' + e.getDate() + ' ' + MON[e.getMonth()];
-  } else if (p === 'month') {
-    from = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-01';
-    label = MONF[now.getMonth()] + ' ' + now.getFullYear();
-  } else if (p === 'year') {
-    from = now.getFullYear() + '-01-01';
-    label = String(now.getFullYear());
-  }
-  return { from: from, label: label, today: today };
+function rowEl(label, value, color, cls) {
+  var r = el('div', 'rw' + (cls ? ' ' + cls : ''));
+  r.appendChild(el('span', '', label));
+  var v = el('span', '', value);
+  if (color) v.style.color = color;
+  r.appendChild(v);
+  return r;
+}
+
+function section(title, rows) {
+  var c = el('div', 'card');
+  c.appendChild(el('h3', '', title));
+  rows.forEach(function (r) { c.appendChild(r); });
+  return c;
+}
+
+function renderDetail(ref) {
+  var t = ref.t, r = calcTrip(t), miles = r.miles;
+  var box = $('detail');
+  box.innerHTML = '';
+  var hero = el('div', 'hero');
+  hero.appendChild(el('div', 't', (t.p || t.v) ? (t.p || '—') + ' → ' + (t.v || '—') : 'Маршрут не указан'));
+  hero.appendChild(el('div', 's', fmtLong(t.d) + ' | ' + (t.s === undefined ? 'Stops: не указано' : stopsText(t.s))));
+  box.appendChild(hero);
+
+  box.appendChild(section('Маршрут', [
+    rowEl('Pickup', t.p || 'Не указано'),
+    rowEl('Delivery', t.v || 'Не указано'),
+    rowEl('Stops', t.s === undefined ? 'Не указано' : String(t.s))
+  ]));
+  box.appendChild(section('Пробег', [
+    rowEl('Loaded Miles', String(t.a)),
+    rowEl('Deadhead Miles', String(t.b)),
+    rowEl('Total Miles', String(miles), null, 'tot')
+  ]));
+  box.appendChild(section('Доход', [
+    rowEl('Load Rate (Gross)', money2(r.gross), '#fff'),
+    rowEl('Gross RPM', miles > 0 ? money2(r.gross / miles) : '—')
+  ]));
+  box.appendChild(section('Топливо', [
+    rowEl('Diesel Price', money2(t.f) + ' / gal'),
+    rowEl('Truck MPG', String(t.g)),
+    rowEl('Estimated Gallons', (t.g > 0 ? miles / t.g : 0).toFixed(1)),
+    rowEl('Total Fuel Cost', money2(r.fuel), 'var(--red2)', 'tot')
+  ]));
+  box.appendChild(section('Комиссия и расходы', [
+    rowEl('Company Commission (' + (Math.round(t.c * 100) / 100) + '%)', money2(r.comp), 'var(--red2)'),
+    rowEl('Other Trip Expenses', money2(r.other), 'var(--red2)'),
+    rowEl('Total Trip Expenses', money2(r.costs), 'var(--red2)', 'tot')
+  ]));
+
+  var col = r.profit < 0 ? 'var(--red2)' : 'var(--mint)';
+  var fin = el('div', 'final');
+  fin.appendChild(rowEl('Gross Revenue', money2(r.gross)));
+  fin.appendChild(rowEl('Total Trip Expenses', '-' + money2(r.costs).replace('-', ''), 'var(--red2)'));
+  var np = el('div', 'rw tot');
+  np.appendChild(el('span', '', 'Net Trip Profit'));
+  var npv = el('span', '', money2(r.profit));
+  npv.style.color = col;
+  npv.style.fontSize = '24px';
+  npv.style.fontWeight = '600';
+  np.appendChild(npv);
+  fin.appendChild(np);
+  fin.appendChild(rowEl('Net RPM', miles > 0 ? money2(r.profit / miles) : '—', miles > 0 ? col : null));
+  box.appendChild(fin);
+
+  var edit = el('button', 'btn-m', 'Редактировать рейс');
+  edit.style.marginBottom = '10px';
+  edit.onclick = function () { startEdit(t.i); };
+  var del = el('button', 'btn-d', 'Удалить рейс');
+  del.onclick = function () { deleteTrip(t.i); };
+  box.appendChild(edit);
+  box.appendChild(del);
+}
+
+function openDetail(id) {
+  var ref = findTrip(id);
+  if (!ref) { openTrips(); return; }
+  renderDetail(ref);
+  show('detail');
+}
+
+function openTrips() {
+  show('trips');
+  renderTrips();
 }
 
 var CIRC = 2 * Math.PI * 70;
 
 function renderTrips() {
-  var rg = periodRange(period);
+  var rg = periodRange(period, offset);
   document.querySelectorAll('.tab').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-p') === period); });
-  $('psub').textContent = rg.label;
-  var items = allTrips().filter(function (p) { return p.t.d >= rg.from; });
-  var gross = 0, fuel = 0, comp = 0, oth = 0, miles = 0;
-  items.forEach(function (p) {
-    var r = calcTrip(p.t);
-    gross += r.gross; fuel += r.fuel; comp += r.comp; oth += r.other; miles += r.miles;
-  });
-  var costs = fuel + comp + oth, profit = gross - costs;
-  var base = Math.max(gross, costs);
-  var vals = [Math.max(profit, 0), fuel, comp, oth], cum = 0;
-  for (var i = 0; i < 4; i++) {
-    var len = base > 0 ? vals[i] / base * CIRC : 0, el = $('s' + i);
-    el.setAttribute('stroke-dasharray', len + ' ' + (CIRC - len));
-    el.setAttribute('stroke-dashoffset', -cum);
-    cum += len;
-    $('l' + i).textContent = money(i === 0 ? profit : vals[i]);
+  $('plabel').textContent = rg.label;
+  var isAll = period === 'all';
+  $('prev').classList.toggle('gone', isAll);
+  $('next').classList.toggle('gone', isAll);
+  $('next').disabled = offset >= 0;
+
+  var s = computeStats(rg);
+  var col = s.net < 0 ? 'var(--red2)' : 'var(--mint)';
+  $('cg').textContent = money(s.gross);
+  $('cn').textContent = money(s.net);
+  $('cn').style.color = col;
+  $('cgr').textContent = s.miles > 0 ? money2(s.gross / s.miles) : '—';
+  $('cnr').textContent = s.miles > 0 ? money2(s.net / s.miles) : '—';
+  $('cnr').style.color = s.miles > 0 ? col : 'var(--mut)';
+  $('ml').textContent = Math.round(s.loaded).toLocaleString('en-US');
+  $('md').textContent = Math.round(s.dead).toLocaleString('en-US');
+  $('mt').textContent = Math.round(s.miles).toLocaleString('en-US');
+  $('cc').textContent = money(s.net);
+  $('cc').style.color = col;
+  $('trips').textContent = s.items.length + ' ' + plural(s.items.length);
+  $('te').textContent = money(s.costs);
+  $('tn').textContent = money(s.net);
+  $('tn').style.color = col;
+
+  var brk = $('brk');
+  brk.innerHTML = '';
+  var segs = [];
+  if (s.net > 0) segs.push([s.net, '#3EE0A8']);
+  function addRow(label, value, color, detail) {
+    var r = el('div', 'brow' + (detail ? ' click' : ''));
+    var dot = el('span', 'd');
+    dot.style.background = color;
+    r.appendChild(dot);
+    r.appendChild(el('span', '', label));
+    r.appendChild(el('span', 'v', money(value)));
+    brk.appendChild(r);
+    segs.push([value, color]);
+    if (detail) {
+      var sub = el('div', 'sublines');
+      sub.hidden = true;
+      detail.forEach(function (c) {
+        var l = el('div');
+        l.appendChild(el('span', '', fmtShort(c.d)));
+        l.appendChild(el('span', '', money2(c.a)));
+        sub.appendChild(l);
+      });
+      brk.appendChild(sub);
+      r.onclick = function () { sub.hidden = !sub.hidden; };
+    }
   }
-  $('gross').textContent = money(gross);
-  $('trips').textContent = items.length + ' ' + plural(items.length);
-  $('mx').textContent = money(costs);
-  $('mp').textContent = money(profit);
-  $('mp').style.color = profit < 0 ? 'var(--red2)' : 'var(--mint)';
-  $('mm').textContent = Math.round(miles).toLocaleString('en-US');
+  addRow('Fuel', s.fuel, '#E5484D');
+  addRow('Company Commission', s.comp, '#F2797C');
+  addRow('Other Trip Expenses', s.other, '#F6A5A7');
+  s.gen.forEach(function (g, i) { addRow(g.def.n, g.total, GEN_COLORS[i % GEN_COLORS.length], g.ch); });
+
+  var ring = $('ring');
+  ring.innerHTML = '';
+  var base = Math.max(s.gross, s.costs), cum = 0;
+  segs.forEach(function (sg) {
+    var len = base > 0 ? sg[0] / base * CIRC : 0;
+    if (len <= 0) return;
+    var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute('cx', 90);
+    c.setAttribute('cy', 90);
+    c.setAttribute('r', 70);
+    c.setAttribute('stroke', sg[1]);
+    c.setAttribute('stroke-dasharray', len + ' ' + (CIRC - len));
+    c.setAttribute('stroke-dashoffset', -cum);
+    ring.appendChild(c);
+    cum += len;
+  });
 
   var list = $('list');
   list.innerHTML = '';
-  if (!items.length) {
-    var em = document.createElement('div');
-    em.className = 'empty';
-    em.textContent = 'За этот период рейсов пока нет. Посчитайте рейс в калькуляторе и нажмите «Сохранить рейс».';
-    list.appendChild(em);
+  if (!s.items.length) {
+    list.appendChild(el('div', 'empty', 'За этот период рейсов нет. Посчитайте рейс в калькуляторе и нажмите «Сохранить рейс».'));
     return;
   }
-  items.forEach(function (p) {
-    var r = calcTrip(p.t), dd = p.t.d.split('-');
-    var row = document.createElement('div');
-    row.className = 'trip';
-    var d1 = document.createElement('div');
-    d1.className = 'dt';
-    d1.textContent = parseInt(dd[2], 10) + ' ' + MON[parseInt(dd[1], 10) - 1];
-    var mid = document.createElement('div');
-    mid.className = 'mid';
-    var l1 = document.createElement('div');
-    l1.className = 'l1';
-    l1.textContent = routeText(p.t);
-    var l2 = document.createElement('div');
-    l2.className = 'l2';
-    l2.textContent = Math.round(r.miles) + ' миль · Gross ' + money(r.gross);
-    mid.appendChild(l1);
-    mid.appendChild(l2);
-    var pf = document.createElement('div');
-    pf.className = 'pf';
-    pf.textContent = money(r.profit);
-    pf.style.color = r.profit < 0 ? 'var(--red2)' : 'var(--mint)';
-    var del = document.createElement('button');
-    del.className = 'del';
-    del.setAttribute('aria-label', 'Удалить рейс');
-    del.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-12M9 7V4h6v3"/></svg>';
-    del.onclick = function () { askDelete(p.k, p.t.i); };
-    row.appendChild(d1);
+  s.items.forEach(function (p) {
+    var r = calcTrip(p.t);
+    var row = el('button', 'trip');
+    row.type = 'button';
+    row.appendChild(el('div', 'dt', fmtShort(p.t.d)));
+    var mid = el('div', 'mid');
+    mid.appendChild(el('div', 'l1', routeText(p.t)));
+    mid.appendChild(el('div', 'l2', Math.round(r.miles) + ' миль · Gross ' + money(r.gross)));
     row.appendChild(mid);
+    var pf = el('div', 'pf', money(r.profit));
+    pf.style.color = r.profit < 0 ? 'var(--red2)' : 'var(--mint)';
+    pf.appendChild(el('small', '', 'осталось'));
     row.appendChild(pf);
-    row.appendChild(del);
+    row.onclick = function () { openDetail(p.t.i); };
     list.appendChild(row);
   });
 }
 
-function show(which) {
-  var calc = which === 'calc';
-  $('scrCalc').hidden = !calc;
-  $('scrTrips').hidden = calc;
-  $('nCalc').classList.toggle('on', calc);
-  $('nTrips').classList.toggle('on', !calc);
-  if (!calc) renderTrips();
-  window.scrollTo(0, 0);
+/* ---------- общие расходы ---------- */
+
+function curAmount(d) { return d.ver[d.ver.length - 1].a; }
+
+function freqName(f) { return f === 'w' ? 'week' : f === 'm' ? 'month' : 'one-time'; }
+
+function openExp() {
+  show('exp');
+  renderExpList();
 }
 
-function fillDefaults() {
-  $('dt').value = ymd(new Date());
-  $('dt').max = ymd(new Date());
-  if (settings.f) $('fp').value = settings.f;
-  if (settings.g) $('mg').value = settings.g;
-  if (settings.c !== undefined && settings.c !== null) $('cp').value = settings.c;
-  calcForm();
+function renderExpList() {
+  document.querySelectorAll('.chip').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-f') === expFilter); });
+  var order = { w: 0, m: 1, o: 2 };
+  var items = Object.keys(defs).map(function (id) { return defs[id]; }).filter(function (d) {
+    return expFilter === 'all' || d.f === expFilter;
+  });
+  items.sort(function (p, q) {
+    if (order[p.f] !== order[q.f]) return order[p.f] - order[q.f];
+    if (p.f === 'o') return p.start < q.start ? 1 : -1;
+    return p.n < q.n ? -1 : p.n > q.n ? 1 : 0;
+  });
+  var list = $('xlist');
+  list.innerHTML = '';
+  if (!items.length) {
+    list.appendChild(el('div', 'empty', 'Расходов пока нет. Добавьте Trailer Rent, ELD, страховку или ремонт, и они попадут в итоги периода.'));
+    return;
+  }
+  items.forEach(function (d) {
+    var row = el('button', 'trip' + (d.stop ? ' stopped' : ''));
+    row.type = 'button';
+    var mid = el('div', 'mid');
+    mid.appendChild(el('div', 'l1', d.n));
+    var sub;
+    if (d.f === 'w') sub = 'каждую ' + WDF[d.dow] + ' · с ' + fmtShort(d.start);
+    else if (d.f === 'm') sub = 'каждое ' + d.dom + ' число · с ' + fmtShort(d.start);
+    else sub = fmtLong(d.start);
+    if (d.stop) sub += ' · остановлен с ' + fmtShort(d.stop);
+    mid.appendChild(el('div', 'l2', sub));
+    row.appendChild(mid);
+    var pf = el('div', 'pf', money2(curAmount(d)) + ' / ' + freqName(d.f));
+    pf.style.color = 'var(--red2)';
+    pf.style.fontSize = '14px';
+    row.appendChild(pf);
+    row.onclick = function () { openExpForm(d.id); };
+    list.appendChild(row);
+  });
 }
+
+function fillSelect(sel, options) {
+  sel.innerHTML = '';
+  options.forEach(function (o) {
+    var opt = document.createElement('option');
+    opt.value = o[0];
+    opt.textContent = o[1];
+    sel.appendChild(opt);
+  });
+}
+
+function updateFormMode() {
+  var f = $('xf').value;
+  var edit = !!expEditing;
+  var regEdit = edit && expEditing.f !== 'o';
+  $('xslabel').textContent = f === 'o' ? 'Дата расхода' : 'Дата начала';
+  $('xdwbox').hidden = f !== 'w';
+  $('xdmbox').hidden = f !== 'm';
+  $('xfromb').hidden = !regEdit;
+  $('xfixb').hidden = !regEdit;
+  $('xhint').hidden = f === 'o';
+  $('xs').disabled = regEdit && !$('xfix').checked;
+  $('xstop').hidden = !(regEdit && !expEditing.stop);
+  $('xdel').hidden = !edit;
+  $('xf').disabled = edit && expEditing.f === 'o';
+}
+
+function openExpForm(id) {
+  expEditing = id ? defs[id] : null;
+  $('xerr').textContent = '';
+  var today = ymd(new Date());
+  fillSelect($('xdw'), WD_ORDER.map(function (n) { return [String(n), WDN[n]]; }));
+  if (!expEditing) {
+    fillSelect($('xf'), [['w', 'Еженедельно'], ['m', 'Ежемесячно'], ['o', 'Разово']]);
+    $('xtitle').textContent = 'Добавить расход';
+    $('xn').value = '';
+    $('xa').value = '';
+    $('xf').value = 'w';
+    $('xs').value = today;
+    $('xdw').value = String(dayOfWeek(today));
+    $('xdm').value = String(parseYmd(today).getDate());
+    $('xfrom').value = today;
+    $('xfix').checked = false;
+    $('xsave').textContent = 'Сохранить';
+  } else {
+    var d = expEditing;
+    $('xtitle').textContent = 'Изменить расход';
+    if (d.f === 'o') fillSelect($('xf'), [['o', 'Разово']]);
+    else fillSelect($('xf'), [['w', 'Еженедельно'], ['m', 'Ежемесячно']]);
+    $('xn').value = d.n;
+    $('xa').value = curAmount(d);
+    $('xf').value = d.f;
+    $('xs').value = d.start;
+    $('xdw').value = String(d.dow !== undefined ? d.dow : dayOfWeek(d.start));
+    $('xdm').value = String(d.dom !== undefined ? d.dom : parseYmd(d.start).getDate());
+    $('xfrom').value = today;
+    $('xfix').checked = false;
+    $('xsave').textContent = 'Сохранить';
+  }
+  updateFormMode();
+  show('expForm');
+}
+
+function newId() { return 'k' + Date.now().toString(36) + Math.floor(Math.random() * 1296).toString(36); }
+
+function saveDef(def, cb) {
+  store.set('g_' + def.id, JSON.stringify(def), function (ok) {
+    if (ok) defs[def.id] = def;
+    cb(ok);
+  });
+}
+
+function formError(t) { $('xerr').textContent = t; }
+
+function saveExpense() {
+  var n = $('xn').value.trim(), a = num('xa'), f = $('xf').value, start = $('xs').value;
+  var dow = parseInt($('xdw').value, 10), dom = parseInt($('xdm').value, 10);
+  if (!n) { formError('Введите название расхода'); return; }
+  if (a <= 0) { formError('Введите сумму больше нуля'); return; }
+  if (!start) { formError('Выберите дату'); return; }
+  if (f === 'm' && !(dom >= 1 && dom <= 31)) { formError('День месяца должен быть от 1 до 31'); return; }
+  formError('');
+  var done = function (ok) {
+    if (!ok) { formError('Не удалось сохранить, попробуйте ещё раз'); return; }
+    openExp();
+  };
+
+  if (!expEditing) {
+    var def = { id: newId(), n: n, f: f, start: start, ver: [{ from: start, a: a }] };
+    if (f === 'w') def.dow = dow;
+    if (f === 'm') def.dom = dom;
+    saveDef(def, done);
+    return;
+  }
+
+  var old = expEditing;
+  if (old.f === 'o') {
+    var one = { id: old.id, n: n, f: 'o', start: start, ver: [{ from: start, a: a }] };
+    saveDef(one, done);
+    return;
+  }
+
+  var fix = $('xfix').checked;
+  var from = $('xfrom').value || ymd(new Date());
+  var scheduleChanged = f !== old.f || (f === 'w' && dow !== old.dow) || (f === 'm' && dom !== old.dom);
+  if (fix || from <= old.start) {
+    var rep = { id: old.id, n: n, f: f, start: fix ? start : old.start, ver: [], stop: old.stop };
+    rep.ver = [{ from: rep.start, a: a }];
+    if (f === 'w') rep.dow = dow;
+    if (f === 'm') rep.dom = dom;
+    if (!rep.stop) delete rep.stop;
+    saveDef(rep, done);
+    return;
+  }
+  if (scheduleChanged) {
+    var closed = JSON.parse(JSON.stringify(old));
+    closed.stop = from;
+    var next = { id: newId(), n: n, f: f, start: from, ver: [{ from: from, a: a }] };
+    if (f === 'w') next.dow = dow;
+    if (f === 'm') next.dom = dom;
+    saveDef(closed, function (ok) {
+      if (!ok) { done(false); return; }
+      saveDef(next, done);
+    });
+    return;
+  }
+  var upd = JSON.parse(JSON.stringify(old));
+  upd.n = n;
+  if (a !== curAmount(old)) {
+    upd.ver = upd.ver.filter(function (v) { return v.from < from; });
+    upd.ver.push({ from: from, a: a });
+  }
+  saveDef(upd, done);
+}
+
+function stopExpense() {
+  var from = $('xfrom').value || ymd(new Date());
+  if (from <= expEditing.start) { formError('Дата остановки должна быть позже даты начала'); return; }
+  askConfirm('Остановить платёж с ' + fmtLong(from) + '? Прошлые начисления сохранятся.', function () {
+    var upd = JSON.parse(JSON.stringify(expEditing));
+    upd.stop = from;
+    saveDef(upd, function (ok) {
+      if (!ok) { formError('Не удалось сохранить, попробуйте ещё раз'); return; }
+      openExp();
+    });
+  });
+}
+
+function deleteExpense() {
+  var d = expEditing;
+  var text = d.f === 'o' ? 'Удалить этот расход?' : 'Удалить платёж вместе со всеми прошлыми начислениями? Если платёж просто закончился, лучше нажмите «Остановить платёж».';
+  askConfirm(text, function () {
+    store.remove('g_' + d.id, function (ok) {
+      if (!ok) { formError('Не удалось удалить, попробуйте ещё раз'); return; }
+      delete defs[d.id];
+      openExp();
+    });
+  });
+}
+
+/* ---------- запуск ---------- */
 
 STATES.forEach(function (s) {
   ['pu', 'de'].forEach(function (id) {
@@ -450,7 +1063,6 @@ STATES.forEach(function (s) {
 ['pu', 'de'].forEach(function (id) { $(id).addEventListener('change', markDirty); });
 $('minus').onclick = function () { setStops(stops - 1); markDirty(); };
 $('plus').onclick = function () { setStops(stops + 1); markDirty(); };
-
 ['dt', 'lm', 'dm', 'lr', 'fp', 'mg', 'cp', 'ex'].forEach(function (id) {
   $(id).addEventListener('input', function () { calcForm(); markDirty(); });
 });
@@ -464,20 +1076,62 @@ $('clr').onclick = function () {
   calcForm();
   markDirty();
 };
-$('nCalc').onclick = function () { show('calc'); };
-$('nTrips').onclick = function () { show('trips'); };
+$('cancelEdit').onclick = cancelEdit;
+$('nCalc').onclick = function () {
+  if (editing) { editing = null; resetCalcMode(); resetForm(); }
+  show('calc');
+};
+$('nTrips').onclick = function () {
+  if (editing) { editing = null; resetCalcMode(); resetForm(); }
+  openTrips();
+};
 document.querySelectorAll('.tab').forEach(function (b) {
-  b.onclick = function () { period = b.getAttribute('data-p'); renderTrips(); };
+  b.onclick = function () { period = b.getAttribute('data-p'); offset = 0; renderTrips(); };
 });
+$('prev').onclick = function () { offset -= 1; renderTrips(); };
+$('next').onclick = function () { if (offset < 0) { offset += 1; renderTrips(); } };
+$('openExp').onclick = openExp;
+$('bkDetail').onclick = goBack;
+$('bkExp').onclick = goBack;
+$('bkForm').onclick = goBack;
+document.querySelectorAll('.chip').forEach(function (b) {
+  b.onclick = function () { expFilter = b.getAttribute('data-f'); renderExpList(); };
+});
+$('xadd').onclick = function () { openExpForm(null); };
+$('xf').addEventListener('change', updateFormMode);
+$('xfix').addEventListener('change', updateFormMode);
+$('xs').addEventListener('change', function () {
+  if (!expEditing && $('xs').value) {
+    $('xdw').value = String(dayOfWeek($('xs').value));
+    $('xdm').value = String(parseYmd($('xs').value).getDate());
+  }
+});
+['xn', 'xa', 'xs', 'xdm', 'xfrom'].forEach(function (id) { $(id).addEventListener('input', function () { formError(''); }); });
+$('xsave').onclick = saveExpense;
+$('xstop').onclick = stopExpense;
+$('xdel').onclick = deleteExpense;
+if (tg && tg.BackButton) { try { tg.BackButton.onClick(goBack); } catch (e) {} }
+
+function fillDefaults() {
+  var today = ymd(new Date());
+  $('dt').value = today;
+  $('dt').max = today;
+  if (settings.f) $('fp').value = settings.f;
+  if (settings.g) $('mg').value = settings.g;
+  if (settings.c !== undefined && settings.c !== null) $('cp').value = settings.c;
+  calcForm();
+}
 
 store.getAll(function (all) {
   Object.keys(all).forEach(function (k) {
     try {
       if (k.indexOf('m_') === 0) chunks[k] = JSON.parse(all[k]) || [];
+      else if (k.indexOf('g_') === 0) { var d = JSON.parse(all[k]); if (d && d.id) defs[d.id] = d; }
       else if (k === 's') settings = JSON.parse(all[k]) || {};
     } catch (e) {}
   });
   fillDefaults();
+  if (view === 'trips') renderTrips();
 });
 fillDefaults();
 </script>
