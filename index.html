@@ -9,50 +9,64 @@
 :root{--mint:#3EE0A8;--mint-soft:rgba(62,224,168,0.12);--bg:#0B0B0B;--card:#151515;--line:#262626;--line2:#2c2c2c;--txt:#F2F2F2;--mut:#9a9a9a;--red:#E5484D;--red2:#F2797C;--red3:#F6A5A7;--gold:#F5C542;--cyan:#4FD8E0;--amber:#F2A33A}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px}
-body{padding:16px 16px 96px;max-width:520px;margin:0 auto}
+body{padding:12px 12px 84px;max-width:520px;margin:0 auto}
 h1{font-size:18px;font-weight:600;margin:0}
 h3{font-size:13px;font-weight:500;color:var(--mut);margin:0 0 6px}
 button{font-family:inherit;cursor:pointer}
-.hdr{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.hdr{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .hdr h1{flex:1;min-width:0}
 .logo{width:36px;height:36px;border-radius:50%;background:var(--mint);color:#0B0B0B;display:flex;align-items:center;justify-content:center;flex:none}
 .back{width:36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--line2);color:#fff;display:flex;align-items:center;justify-content:center;flex:none;padding:0}
 .lbtn{height:32px;padding:0 10px;border-radius:16px;background:var(--card);border:1px solid var(--line2);color:var(--mut);font-size:13px;display:flex;align-items:center;gap:5px;flex:none}
 .lbtn b{font-weight:500}
 .lbtn b.on{color:var(--mint);font-weight:700}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:16px}
-.f label{display:block;font-size:12px;color:var(--mut);margin:0 0 5px}
-.f input,.f select{width:100%;height:44px;background:var(--card);border:1px solid var(--line2);color:#fff;border-radius:10px;padding:0 12px;font-size:16px;font-family:inherit;color-scheme:dark}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 10px;margin-bottom:10px}
+.f label{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--mut);margin:0 0 3px;line-height:1.2}
+.ic{display:inline-flex;flex:none}
+.ic svg{width:14px;height:14px;stroke:#65DDB1;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block}
+.ic.big svg{width:17px;height:17px}
+.f input,.f select{width:100%;height:40px;background:var(--card);border:1px solid var(--line2);color:#fff;border-radius:10px;padding:0 12px;font-size:16px;font-family:inherit;color-scheme:dark}
 .f select{padding:0 6px}
 .f input:focus,.f select:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 2px rgba(62,224,168,0.25)}
 .f input:disabled,.f select:disabled{opacity:.55}
 .f.full{grid-column:1 / -1}
-.route{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
-.cnt{display:flex;align-items:center;height:44px;background:var(--card);border:1px solid var(--line2);border-radius:10px;overflow:hidden}
-.cnt button{width:44px;height:100%;background:transparent;border:none;color:var(--mint);font-size:22px;line-height:1;padding:0}
+.route{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:end}
+.cnt{display:flex;align-items:center;height:40px;background:var(--card);border:1px solid var(--line2);border-radius:10px;overflow:hidden}
+.cnt button{width:40px;height:100%;background:transparent;border:none;color:var(--mint);font-size:22px;line-height:1;padding:0}
 .cnt button:active{background:#1f1f1f}
 .cnt button:disabled{color:#444;cursor:default}
 .cnt span{flex:1;text-align:center;font-size:16px;font-weight:600}
 .err{font-size:12px;color:var(--red2);margin-top:4px;min-height:0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:12px}
-.rw{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:14px}
-.rw span:last-child{font-weight:500;text-align:right}
-.rw.tot{border-top:1px solid var(--line2);margin-top:4px;padding-top:10px}
-.pbox{margin-top:10px;padding:12px 14px;border-radius:10px;background:var(--mint-soft);display:flex;justify-content:space-between;align-items:baseline}
-.pbox .lbl{font-size:14px}
-.pbox .big{font-size:24px;font-weight:600;color:var(--mint)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:10px}
+.card h3.hh{display:flex;align-items:center;gap:6px;color:var(--txt);font-size:14px;font-weight:600;margin:0 0 8px}
+.rw{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:3px 0;font-size:14px}
+.rw > span:last-child{font-weight:500;text-align:right}
+.rw .lb{display:flex;align-items:center;gap:6px}
+.rw.tot{border-top:1px solid var(--line2);margin-top:3px;padding-top:7px}
+.pbox{margin-top:8px;padding:9px 12px;border-radius:10px;background:var(--mint-soft);display:flex;justify-content:space-between;align-items:baseline}
+.pbox .lbl{font-size:14px;display:flex;align-items:center;gap:6px}
+.rpm2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.rpm2 .rtile{background:#1b1b1b;border-radius:10px;padding:7px 10px}
+.rpm2 .k{font-size:11.5px;color:var(--mut);display:flex;align-items:center;gap:5px}
+.rpm2 .n{font-size:20px;font-weight:600;margin-top:1px}
+.goalrow{display:flex;gap:6px;align-items:center}
+.goalrow input{width:92px;flex:none}
+.seg{display:flex;gap:5px;flex:1;min-width:0}
+.seg button{flex:1;min-width:0;height:40px;font-size:12px;background:transparent;border:1px solid var(--line2);color:#b5b5b5;border-radius:10px;padding:0 4px;white-space:nowrap}
+.seg button.on{background:var(--mint);color:#0B0B0B;border-color:var(--mint);font-weight:600}
+.pbox .big{font-size:22px;font-weight:600;color:var(--mint)}
 .note{font-size:13px;color:var(--mut);margin-top:8px;line-height:1.4}
-.btn-m{width:100%;height:48px;background:var(--mint);color:#0B0B0B;border:none;border-radius:12px;font-size:16px;font-weight:600}
+.btn-m{width:100%;height:46px;background:var(--mint);color:#0B0B0B;border:none;border-radius:12px;font-size:16px;font-weight:600}
 .btn-m:active{opacity:.85}
 .btn-m:disabled{opacity:.4;cursor:default}
 .btn-m.done{background:#1c3a30;color:var(--mint)}
-.btn-g{width:100%;height:44px;background:transparent;color:#b5b5b5;border:1px solid var(--line2);border-radius:12px;font-size:14px}
+.btn-g{width:100%;height:40px;background:transparent;color:#b5b5b5;border:1px solid var(--line2);border-radius:12px;font-size:14px}
 .btn-d{width:100%;height:44px;background:transparent;color:var(--red2);border:1px solid rgba(242,121,124,0.5);border-radius:12px;font-size:14px}
-.msg{font-size:13px;text-align:center;min-height:20px;margin:8px 0 4px}
-.tabs{display:flex;gap:6px;margin-bottom:10px}
+.msg{font-size:13px;text-align:center;min-height:16px;margin:4px 0 2px}
+.tabs{display:flex;gap:6px;margin-bottom:8px}
 .tab{flex:1;height:36px;font-size:13px;background:transparent;border:1px solid var(--line2);color:#b5b5b5;border-radius:8px;padding:0 2px}
 .tab.on{background:var(--mint);color:#0B0B0B;border-color:var(--mint);font-weight:600}
-.pnav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.pnav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
 .pmid{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:8px}
 .rbtn{display:flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:0 8px;line-height:1.2;text-align:center;background:var(--card);border:1px solid var(--line2);border-radius:8px;color:var(--txt);font-size:14px;font-weight:500;min-width:0}
 .rbtn.cust{border-color:var(--mint);color:var(--mint)}
@@ -61,15 +75,15 @@ button{font-family:inherit;cursor:pointer}
 .arr{width:36px;height:36px;border-radius:8px;background:transparent;border:1px solid var(--line2);color:#e8e8e8;display:flex;align-items:center;justify-content:center;padding:0;flex:none}
 .arr:disabled{opacity:.3;cursor:default}
 .arr.gone{visibility:hidden}
-.cards2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.cards2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:9px 12px}
 .stat .k{font-size:12px;color:var(--mut)}
-.stat .n{font-size:22px;font-weight:600;margin-top:2px}
-.mets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
-.met{background:var(--card);border-radius:10px;padding:10px 12px}
+.stat .n{font-size:20px;font-weight:600;margin-top:2px}
+.mets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:8px}
+.met{background:var(--card);border-radius:10px;padding:8px 10px}
 .met .k{font-size:12px;color:var(--mut)}
 .met .n{font-size:16px;font-weight:600;margin-top:2px}
-.pill{display:flex;align-items:center;gap:10px;padding:12px 14px;margin-bottom:12px;border-radius:12px;background:rgba(214,110,20,0.14);border:1px solid rgba(214,110,20,0.55);color:#FFB066;font-size:14px}
+.pill{display:flex;align-items:center;gap:10px;padding:10px 12px;margin-bottom:8px;border-radius:12px;background:rgba(214,110,20,0.14);border:1px solid rgba(214,110,20,0.55);color:#FFB066;font-size:14px}
 .pill svg{flex:none;color:var(--amber)}
 .pill .pl{flex:1}
 .pill .pv{font-weight:600;font-size:15px;text-align:right}
@@ -117,11 +131,12 @@ button.bdg.open{box-shadow:0 0 0 2px rgba(255,255,255,0.15)}
 .hero .t{font-size:26px;font-weight:600}
 .hero .s{font-size:14px;color:var(--mut);margin-top:2px}
 .final{background:var(--mint-soft);border:1px solid rgba(62,224,168,0.4);border-radius:14px;padding:14px 16px;margin-bottom:14px}
-.bk{background:var(--card);border:1px solid rgba(62,224,168,0.35);border-radius:14px;padding:12px 16px;margin-bottom:12px}
-.bk h3{color:var(--mint);font-weight:600;font-size:14px}
-.bk .rec{margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--mint-soft);display:flex;justify-content:space-between;align-items:baseline}
-.bk .rec .big{font-size:22px;font-weight:600;color:var(--mint)}
-.bk .ask{font-size:14px;margin-top:8px;color:var(--txt)}
+.bk{background:var(--card);border:1px solid rgba(62,224,168,0.35);border-radius:14px;padding:10px 14px;margin-bottom:10px}
+.bk h3{color:var(--mint);font-weight:600;font-size:14px;margin:0 0 6px}
+.bk h3.hh{display:flex;align-items:center;gap:6px}
+.bk .rec{margin-top:6px;padding:8px 12px;border-radius:10px;background:var(--mint-soft);display:flex;justify-content:space-between;align-items:baseline}
+.bk .rec .big{font-size:21px;font-weight:600;color:var(--mint)}
+.bk .ask{font-size:14px;margin-top:6px;color:var(--txt)}
 .bk.ok{background:var(--mint-soft)}
 .bk .okt{font-size:15px;font-weight:600;color:var(--mint)}
 nav{position:fixed;left:0;right:0;bottom:0;background:rgba(11,11,11,0.96);border-top:1px solid var(--line);display:flex;padding:8px 16px calc(8px + env(safe-area-inset-bottom));gap:8px;max-width:520px;margin:0 auto;z-index:5}
@@ -159,30 +174,35 @@ nav button.on{color:var(--mint)}
   </div>
 
   <div class="grid">
-    <div class="f full"><label for="dt" data-i="tripDate"></label><input id="dt" type="date"></div>
+    <div class="f full"><label for="dt"><i class="ic" data-ic="calendar-days"></i><span data-i="tripDate"></span></label><input id="dt" type="date"></div>
     <div class="route">
-      <div class="f"><label for="pu">Pickup</label><select id="pu"><option value="" data-i="state"></option></select></div>
-      <div class="f"><label for="de">Delivery</label><select id="de"><option value="" data-i="state"></option></select></div>
-      <div class="f"><label>Stops</label><div class="cnt"><button type="button" id="minus" data-al="lessStops" disabled>&minus;</button><span id="sv">0</span><button type="button" id="plus" data-al="moreStops">+</button></div></div>
+      <div class="f"><label for="pu"><i class="ic" data-ic="map-pin"></i><span data-i="lblPickup"></span></label><select id="pu"><option value="" data-i="state"></option></select></div>
+      <div class="f"><label for="de"><i class="ic" data-ic="flag"></i><span data-i="lblDelivery"></span></label><select id="de"><option value="" data-i="state"></option></select></div>
+      <div class="f"><label><i class="ic" data-ic="list-ordered"></i><span data-i="lblStops"></span></label><div class="cnt"><button type="button" id="minus" data-al="lessStops" disabled>&minus;</button><span id="sv">0</span><button type="button" id="plus" data-al="moreStops">+</button></div></div>
     </div>
-    <div class="f"><label for="lm" data-i="loadedMi"></label><input id="lm" type="number" inputmode="decimal" min="0" placeholder="800"></div>
-    <div class="f"><label for="dm" data-i="deadMi"></label><input id="dm" type="number" inputmode="decimal" min="0" placeholder="100"></div>
-    <div class="f"><label for="lr" data-i="loadRate"></label><input id="lr" type="number" inputmode="decimal" min="0" placeholder="2400"></div>
-    <div class="f"><label for="fp" data-i="diesel"></label><input id="fp" type="number" inputmode="decimal" min="0" step="0.01" placeholder="3.80"></div>
-    <div class="f"><label for="mg">MPG</label><input id="mg" type="number" inputmode="decimal" min="0" step="0.1" placeholder="6.5"><div class="err" id="mgerr"></div></div>
-    <div class="f"><label for="cp" data-i="commPct"></label><input id="cp" type="number" inputmode="decimal" min="0" placeholder="12"></div>
-    <div class="f full"><label for="ex" data-i="otherLbl"></label><input id="ex" type="number" inputmode="decimal" min="0" placeholder="150"></div>
-    <div class="f full"><label for="gl" data-i="goalLbl"></label><input id="gl" type="number" inputmode="decimal" min="0" step="0.01" placeholder="2.50"></div>
+    <div class="f"><label for="lm"><i class="ic" data-ic="package-check"></i><span data-i="loadedMi"></span></label><input id="lm" type="number" inputmode="decimal" min="0" data-ph="phMiles"></div>
+    <div class="f"><label for="dm"><i class="ic" data-ic="truck"></i><span data-i="deadMi"></span></label><input id="dm" type="number" inputmode="decimal" min="0" data-ph="phMiles"></div>
+    <div class="f"><label for="lr"><i class="ic" data-ic="dollar-sign"></i><span data-i="loadRate"></span></label><input id="lr" type="number" inputmode="decimal" min="0" data-ph="phSum"></div>
+    <div class="f"><label for="fp"><i class="ic" data-ic="fuel"></i><span data-i="diesel"></span></label><input id="fp" type="number" inputmode="decimal" min="0" step="0.01" data-ph="phPrice"></div>
+    <div class="f"><label for="mg"><i class="ic" data-ic="gauge"></i><span data-i="mpgL"></span></label><input id="mg" type="number" inputmode="decimal" min="0" step="0.1" data-ph="phMpg"><div class="err" id="mgerr"></div></div>
+    <div class="f"><label for="cp"><i class="ic" data-ic="percent"></i><span data-i="commPct"></span></label><input id="cp" type="number" inputmode="decimal" min="0" data-ph="phPct"></div>
+    <div class="f full"><label for="ex"><i class="ic" data-ic="receipt"></i><span data-i="otherLbl"></span></label><input id="ex" type="number" inputmode="decimal" min="0" data-ph="phSum"></div>
+    <div class="f full"><label for="gl"><i class="ic" data-ic="target"></i><span data-i="goalLbl"></span></label><div class="goalrow"><input id="gl" type="number" inputmode="decimal" min="0" step="0.01" data-ph="phGoal"><div class="seg" id="gm"><button type="button" data-m="n" data-i="gNet"></button><button type="button" data-m="g" data-i="gGross"></button></div></div></div>
   </div>
 
-  <div class="card" style="padding:14px 16px">
-    <div class="rw"><span data-i="fuelRow"></span><span id="rf">$0.00</span></div>
-    <div class="rw"><span data-i="commRow"></span><span id="rc">$0.00</span></div>
-    <div class="rw"><span data-i="otherRow"></span><span id="re">$0.00</span></div>
-    <div class="rw tot"><span data-i="totRow"></span><span id="rt" style="color:var(--red2)">$0.00</span></div>
-    <div class="pbox" id="pbox"><span class="lbl" data-i="remains"></span><span class="big" id="rp">$0.00</span></div>
-    <div class="note" id="rm"></div>
-    <div class="note" data-i="calcNote"></div>
+  <div class="card">
+    <h3 class="hh"><i class="ic" data-ic="calculator"></i><span data-i="resTitle"></span></h3>
+    <div class="rpm2">
+      <div class="rtile"><div class="k"><i class="ic" data-ic="trending-up"></i>Gross RPM</div><div class="n" id="rgr">—</div></div>
+      <div class="rtile"><div class="k"><i class="ic" data-ic="wallet"></i>Net RPM</div><div class="n" id="rnr">—</div></div>
+    </div>
+    <div class="rw"><span class="lb"><i class="ic" data-ic="dollar-sign"></i><span data-i="rLoad"></span></span><span id="rg">$0.00</span></div>
+    <div class="rw"><span class="lb"><i class="ic" data-ic="fuel"></i><span data-i="rFuel"></span></span><span id="rf" style="color:var(--red2)">$0.00</span></div>
+    <div class="rw"><span class="lb"><i class="ic" data-ic="percent"></i><span data-i="rComm"></span></span><span id="rc" style="color:var(--red2)">$0.00</span></div>
+    <div class="rw"><span class="lb"><i class="ic" data-ic="receipt-text"></i><span data-i="rOther"></span></span><span id="re" style="color:var(--red2)">$0.00</span></div>
+    <div class="rw tot"><span data-i="rTotal"></span><span id="rt" style="color:var(--red2)">$0.00</span></div>
+    <div class="pbox" id="pbox"><span class="lbl"><i class="ic big" data-ic="circle-dollar-sign"></i><span data-i="rNet"></span></span><span class="big" id="rp">$0.00</span></div>
+    <div class="note" style="margin-top:6px;font-size:12px" data-i="calcNote"></div>
   </div>
 
   <div class="bk" id="bk"></div>
@@ -190,7 +210,7 @@ nav button.on{color:var(--mint)}
   <button class="btn-m" id="save"></button>
   <div class="msg" id="saved"></div>
   <button class="btn-g" id="clr" data-i="clear"></button>
-  <button class="btn-g" id="cancelEdit" data-i="cancel" hidden></button>
+  <button class="btn-g" id="cancelEdit" data-i="cancel" style="margin-top:6px" hidden></button>
 </section>
 
 <section id="scrTrips" hidden>
@@ -216,18 +236,18 @@ nav button.on{color:var(--mint)}
 
   <div class="cards2">
     <div class="stat"><div class="k">Gross</div><div class="n" id="cg" style="color:#fff"></div></div>
-    <div class="stat"><div class="k">Net Profit</div><div class="n" id="cn"></div></div>
+    <div class="stat"><div class="k" data-i="stNet"></div><div class="n" id="cn"></div></div>
     <div class="stat"><div class="k">Gross RPM</div><div class="n" id="cgr" style="color:#fff"></div></div>
     <div class="stat"><div class="k">Net RPM</div><div class="n" id="cnr"></div></div>
   </div>
 
   <div class="mets">
-    <div class="met"><div class="k">Loaded Miles</div><div class="n" id="ml"></div></div>
-    <div class="met"><div class="k">Deadhead Miles</div><div class="n" id="md"></div></div>
-    <div class="met"><div class="k">Total Miles</div><div class="n" id="mt"></div></div>
+    <div class="met"><div class="k" data-i="miLoaded"></div><div class="n" id="ml"></div></div>
+    <div class="met"><div class="k" data-i="miDead"></div><div class="n" id="md"></div></div>
+    <div class="met"><div class="k" data-i="miTotal"></div><div class="n" id="mt"></div></div>
   </div>
 
-  <div class="pill" id="pill">
+  <div class="pill" id="pill" hidden>
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M10 14l4 4M14 14l-4 4"/></svg>
     <span class="pl" data-i="pillLbl"></span><span class="pv" id="pillv"></span>
   </div>
@@ -239,15 +259,15 @@ nav button.on{color:var(--mint)}
         <g id="ring" transform="rotate(-90 90 90)" fill="none" stroke-width="22"></g>
       </svg>
       <div class="c">
-        <div style="font-size:12px;color:var(--mut)">Net Profit</div>
+        <div style="font-size:12px;color:var(--mut)" data-i="stNet"></div>
         <div style="font-size:20px;font-weight:600" id="cc"></div>
         <div style="font-size:12px;color:var(--mut)" id="trips"></div>
       </div>
     </div>
     <div style="font-size:13px;color:var(--mut);margin:4px 0 2px" data-i="expPeriod"></div>
     <div id="brk"></div>
-    <div class="rw tot"><span>Total Expenses</span><span id="te" style="color:var(--red2)"></span></div>
-    <div class="rw"><span>Net Profit</span><span id="tn"></span></div>
+    <div class="rw tot"><span data-i="totExp"></span><span id="te" style="color:var(--red2)"></span></div>
+    <div class="rw"><span data-i="stNet"></span><span id="tn"></span></div>
   </div>
 
   <button class="btn-g" id="openExp" style="height:46px;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px"><span data-i="genExp"></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -291,15 +311,15 @@ nav button.on{color:var(--mint)}
     <h1 id="xtitle"></h1>
   </div>
   <div class="grid" style="margin-bottom:8px">
-    <div class="f full"><label for="xn" data-i="xName"></label><input id="xn" type="text" list="xnames" autocomplete="off" placeholder="Trailer Rent"></div>
-    <div class="f"><label for="xa" data-i="xAmt"></label><input id="xa" type="number" inputmode="decimal" min="0" placeholder="250"></div>
+    <div class="f full"><label for="xn" data-i="xName"></label><input id="xn" type="text" list="xnames" autocomplete="off" data-ph="phName"></div>
+    <div class="f"><label for="xa" data-i="xAmt"></label><input id="xa" type="number" inputmode="decimal" min="0" data-ph="phSum"></div>
     <div class="f"><label for="xf" data-i="xFreq"></label><select id="xf"></select></div>
     <div class="f full"><label for="xs" id="xslabel"></label><input id="xs" type="date"></div>
     <div class="f full" id="xdwbox"><label for="xdw" data-i="xDow"></label><select id="xdw"></select></div>
-    <div class="f full" id="xdmbox"><label for="xdm" data-i="xDom"></label><input id="xdm" type="number" inputmode="numeric" min="1" max="31" placeholder="15"><div class="note" style="margin-top:4px" data-i="xDomNote"></div></div>
+    <div class="f full" id="xdmbox"><label for="xdm" data-i="xDom"></label><input id="xdm" type="number" inputmode="numeric" min="1" max="31" data-ph="phDay"><div class="note" style="margin-top:4px" data-i="xDomNote"></div></div>
     <div class="f full" id="xfromb"><label for="xfrom" data-i="xFrom"></label><input id="xfrom" type="date"><div class="note" style="margin-top:4px" data-i="xFromNote"></div></div>
   </div>
-  <datalist id="xnames"><option value="Trailer Rent"><option value="ELD"><option value="Cargo Insurance"><option value="Company Fee"><option value="Truck Payment"><option value="Insurance"><option value="Oil Change"><option value="Truck Repair"><option value="Tires"><option value="Towing"></datalist>
+  <datalist id="xnames"></datalist>
   <label class="chk" id="xfixb"><input type="checkbox" id="xfix"><span data-i="xFix"></span></label>
   <div class="note" id="xhint" style="margin:0 0 8px" data-i="xHint"></div>
   <div class="err" id="xerr" style="min-height:18px;font-size:13px;margin-bottom:6px"></div>
@@ -372,21 +392,21 @@ var T = {
 ru: {
   calcTitle: 'Калькулятор рейса', editTitle: 'Редактировать рейс', tripDate: 'Дата рейса', state: 'Штат',
   lessStops: 'Меньше Stops', moreStops: 'Больше Stops',
-  loadedMi: 'Loaded Miles (с грузом)', deadMi: 'Deadhead Miles (пустым)', loadRate: 'Load rate, $',
-  diesel: 'Дизель, $ за галлон', commPct: 'Процент компании, %', otherLbl: 'Расходы рейса, $ (другие траты за этот рейс)',
-  goalLbl: 'Моя цель по Net RPM, $ за милю', mpgErr: 'Введите MPG больше нуля',
+  loadedMi: 'Мили с грузом', deadMi: 'Мили порожняком', loadRate: 'Ставка груза, $',
+  diesel: 'Дизель, $ за галлон', commPct: 'Комиссия компании, %', otherLbl: 'Прочие расходы рейса, $',
+  goalLbl: 'Моя цель по RPM, $ за милю', mpgErr: 'Введите MPG больше нуля',
   fuelRow: 'Топливо', commRow: 'Комиссия компании', otherRow: 'Расходы рейса', totRow: 'Всего расходов рейса', remains: 'С рейса остаётся',
-  calcNote: 'Недельные и месячные платежи (trailer, ELD, ремонт) добавляются в «Мои рейсы», кнопка «Общие расходы».',
+  calcNote: 'Недельные и месячные платежи (аренда трейлера, ELD, ремонт) добавляются в «Мои рейсы», кнопка «Общие расходы».',
   milesLine: 'Всего {0} миль, около {1} за милю',
   saveTrip: 'Сохранить рейс', saveChanges: 'Сохранить изменения', saved: 'Сохранено', clear: 'Очистить поля', cancel: 'Отмена',
   msgSaved: 'Рейс сохранён. Смотрите в «Мои рейсы»', msgNeedRate: 'Введите Load rate, чтобы сохранить рейс',
   msgNeedMiles: 'Введите мили, чтобы сохранить рейс', msgNeedMpg: 'Введите MPG больше нуля', msgFail: 'Не удалось сохранить, попробуйте ещё раз',
   bkTitle: 'Чтобы достичь вашей цели', bkGoal: 'Ваша цель', bkCur: 'Текущий Net RPM', bkRec: 'Рекомендуемая ставка',
   bkMore: 'Попросите у брокера на {0} больше', bkAsk: 'Попросите у брокера {0}',
-  bkMet: 'Ваша цель по Net RPM достигнута', bkSet: 'Укажите свою цель по Net RPM выше, и приложение подскажет, какую ставку просить у брокера.',
-  bkNeed: 'Введите мили и MPG, чтобы рассчитать ставку.',
+  bkMet: 'Ваша цель по {0} RPM достигнута', bkSet: 'Укажите свою цель по Net RPM выше, и приложение подскажет, какую ставку просить у брокера.',
+  bkNeed: 'Введите мили (для Net ещё и MPG), чтобы рассчитать ставку.',
   bkImp: 'При комиссии компании 100% и выше цель недостижима. Проверьте процент компании.',
-  bkNote: 'Ставка округлена вверх до $10. Расчёт по рейсу, без общих расходов.',
+  bkNote: 'Ставка округлена вверх до $10.',
   tripsTitle: 'Мои рейсы', wk: 'Неделя', mo: 'Месяц', yr: 'Год', all: 'Всё время', allData: 'Все сохранённые данные',
   prevP: 'Предыдущий период', nextP: 'Следующий период', pickDates: 'Выбрать даты', resetBtn: 'Сбросить',
   pillLbl: 'Дней без рейса', pillVal: '{0} из {1}',
@@ -397,8 +417,8 @@ ru: {
   bProfit: 'Самый прибыльный', bRpm: 'Лучший по Net RPM', bWorst: 'Самый невыгодный',
   capAch: 'Достижения за {0}',
   xpGross: 'Gross', xpExp: 'Расходы рейса', xpNet: 'Net Trip Profit', xpMiles: 'Total Miles',
-  fmProfit: 'Net Trip Profit = Gross − Total Trip Expenses',
-  fmRpm: 'Net RPM = Net Trip Profit ÷ Total Miles',
+  fmProfit: 'Чистая прибыль рейса = Gross − расходы рейса',
+  fmRpm: 'Net RPM = чистая прибыль рейса ÷ всего миль',
   wnWorst: 'Самый невыгодный не значит убыточный: это рейс с самым низким Net RPM за выбранный период. Он может быть и в плюсе.',
   detTitle: 'Детали рейса', secRoute: 'Маршрут', secMiles: 'Пробег', secIncome: 'Доход', secFuel: 'Топливо', secComm: 'Комиссия и расходы',
   stopsNA: 'Stops: не указано', edit: 'Редактировать рейс', del: 'Удалить рейс', confirmDel: 'Удалить этот рейс?',
@@ -416,7 +436,7 @@ ru: {
   xDomNote: 'Если в месяце нет такого дня, платёж спишется в последний день месяца.',
   xFrom: 'Изменение действует с', xFromNote: 'Прошлые периоды сохранят прежнюю сумму.',
   xFix: 'Исправить ошибку: заменить сумму и даты за всё время',
-  xHint: 'Если ELD или Trailer Rent уже входят в Company Fee, добавьте только один из платежей, иначе они посчитаются дважды.',
+  xHint: 'Если ELD или аренда трейлера уже входят в комиссию компании, добавьте только один из платежей, иначе они посчитаются дважды.',
   save: 'Сохранить', xStop: 'Остановить платёж', xDel: 'Удалить расход',
   eName: 'Введите название расхода', eAmt: 'Введите сумму больше нуля', eDate: 'Выберите дату', eDom: 'День месяца должен быть от 1 до 31',
   eStop: 'Дата остановки должна быть позже даты начала', eDelFail: 'Не удалось удалить, попробуйте ещё раз',
@@ -425,6 +445,15 @@ ru: {
   calApply: 'Применить', calReset: 'Сбросить даты', calHint: 'Выберите первую и последнюю дату', calSel: 'Выбрано: {0}',
   lgGood: 'Прибыль, цель выполнена', lgGoodNoGoal: 'Прибыль', lgMid: 'Прибыль ниже цели', lgBad: 'Убыток', lgNone: 'Нет рейсов', lgZero: 'Ноль',
   navCalc: 'Калькулятор', navTrips: 'Мои рейсы',
+  lblPickup: 'Погрузка', lblDelivery: 'Выгрузка', lblStops: 'Остановки',
+  mpgL: 'MPG трака', gNet: 'Net (чистыми)', gGross: 'Gross (грязными)',
+  phMiles: 'Введите мили', phSum: 'Введите сумму', phMpg: 'Введите MPG', phPct: 'Введите %', phPrice: 'Введите цену', phGoal: 'Введите цель', phName: 'Введите название', phDay: 'Введите день',
+  resTitle: 'Расчёт рейса', rLoad: 'Ставка груза (Gross)', rFuel: 'Топливо', rComm: 'Комиссия компании', rOther: 'Прочие расходы рейса', rTotal: 'Всего расходов рейса', rNet: 'Чистая прибыль рейса',
+  stNet: 'Чистая прибыль', miLoaded: 'Миль с грузом', miDead: 'Миль порожняком', miTotal: 'Всего миль', totExp: 'Все расходы',
+  dDiesel: 'Цена дизеля', perGal: '/ галлон', dGal: 'Галлонов (оценка)', dFuelTot: 'Топливо всего', dRev: 'Доход (Gross)',
+  st1: 'остановка', st2: 'остановки', st5: 'остановок',
+  bkCurN: 'Текущий Net RPM', bkCurG: 'Текущий Gross RPM', bkNetNote: 'Расчёт по рейсу, без общих расходов.',
+  names: ['Аренда трейлера', 'ELD', 'Страховка груза', 'Комиссия компании', 'Платёж за трак', 'Страховка', 'Замена масла', 'Ремонт трака', 'Шины', 'Эвакуатор'],
   wd: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
   mon: ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
   mong: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'],
@@ -433,9 +462,9 @@ ru: {
 en: {
   calcTitle: 'Trip Calculator', editTitle: 'Edit trip', tripDate: 'Trip date', state: 'State',
   lessStops: 'Fewer Stops', moreStops: 'More Stops',
-  loadedMi: 'Loaded Miles (with cargo)', deadMi: 'Deadhead Miles (empty)', loadRate: 'Load rate, $',
-  diesel: 'Diesel, $ per gallon', commPct: 'Company commission, %', otherLbl: 'Trip expenses, $ (other costs for this trip)',
-  goalLbl: 'My Net RPM goal, $ per mile', mpgErr: 'Enter MPG above zero',
+  loadedMi: 'Loaded miles', deadMi: 'Deadhead miles', loadRate: 'Load rate, $',
+  diesel: 'Diesel, $ per gallon', commPct: 'Company commission, %', otherLbl: 'Other trip expenses, $',
+  goalLbl: 'My RPM target, $ per mile', mpgErr: 'Enter MPG above zero',
   fuelRow: 'Fuel', commRow: 'Company commission', otherRow: 'Trip expenses', totRow: 'Total trip expenses', remains: 'Left from this trip',
   calcNote: 'Weekly and monthly payments (trailer, ELD, repairs) are added in “My Trips”, button “General expenses”.',
   milesLine: '{0} miles total, about {1} per mile',
@@ -444,10 +473,10 @@ en: {
   msgNeedMiles: 'Enter miles to save the trip', msgNeedMpg: 'Enter MPG above zero', msgFail: 'Could not save, please try again',
   bkTitle: 'To reach your goal', bkGoal: 'Your goal', bkCur: 'Current Net RPM', bkRec: 'Recommended rate',
   bkMore: 'Ask the broker for {0} more', bkAsk: 'Ask the broker for {0}',
-  bkMet: 'Your Net RPM goal is reached', bkSet: 'Set your Net RPM goal above and the app will tell you what rate to ask the broker for.',
-  bkNeed: 'Enter miles and MPG to calculate the rate.',
+  bkMet: 'Your {0} RPM goal is reached', bkSet: 'Set your Net RPM goal above and the app will tell you what rate to ask the broker for.',
+  bkNeed: 'Enter miles (and MPG for Net) to calculate the rate.',
   bkImp: 'With a company commission of 100% or more the goal cannot be reached. Check the commission.',
-  bkNote: 'The rate is rounded up to $10. Based on this trip only, without general expenses.',
+  bkNote: 'The rate is rounded up to $10.',
   tripsTitle: 'My Trips', wk: 'Week', mo: 'Month', yr: 'Year', all: 'All time', allData: 'All saved data',
   prevP: 'Previous period', nextP: 'Next period', pickDates: 'Pick dates', resetBtn: 'Reset',
   pillLbl: 'Days without a trip', pillVal: '{0} of {1}',
@@ -486,12 +515,44 @@ en: {
   calApply: 'Apply', calReset: 'Reset dates', calHint: 'Pick the first and the last date', calSel: 'Selected: {0}',
   lgGood: 'Profit, goal met', lgGoodNoGoal: 'Profit', lgMid: 'Profit below goal', lgBad: 'Loss', lgNone: 'No trips', lgZero: 'Zero',
   navCalc: 'Calculator', navTrips: 'My Trips',
+  lblPickup: 'Pickup', lblDelivery: 'Delivery', lblStops: 'Stops',
+  mpgL: 'Truck MPG', gNet: 'Net (after costs)', gGross: 'Gross (total)',
+  phMiles: 'Enter miles', phSum: 'Enter amount', phMpg: 'Enter MPG', phPct: 'Enter %', phPrice: 'Enter price', phGoal: 'Enter target', phName: 'Enter name', phDay: 'Enter day',
+  resTitle: 'Trip calculation', rLoad: 'Load Rate (Gross)', rFuel: 'Fuel Cost', rComm: 'Company Commission', rOther: 'Other Trip Expenses', rTotal: 'Total Trip Expenses', rNet: 'Net Trip Profit',
+  stNet: 'Net Profit', miLoaded: 'Loaded Miles', miDead: 'Deadhead Miles', miTotal: 'Total Miles', totExp: 'Total Expenses',
+  dDiesel: 'Diesel Price', perGal: '/ gal', dGal: 'Estimated Gallons', dFuelTot: 'Total Fuel Cost', dRev: 'Gross Revenue',
+  st1: 'Stop', st2: 'Stops', st5: 'Stops',
+  bkCurN: 'Current Net RPM', bkCurG: 'Current Gross RPM', bkNetNote: 'Based on this trip only, without general expenses.',
+  names: ['Trailer Rent', 'ELD', 'Cargo Insurance', 'Company Fee', 'Truck Payment', 'Insurance', 'Oil Change', 'Truck Repair', 'Tires', 'Towing'],
   wd: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
   mon: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   mong: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   monf: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 }
 };
+
+var ICONS = {
+  'calendar-days': '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/>',
+  'map-pin': '<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+  'flag': '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/>',
+  'list-ordered': '<path d="M11 5h10"/><path d="M11 12h10"/><path d="M11 19h10"/><path d="M4 4h1v5"/><path d="M4 9h2"/><path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02"/>',
+  'package-check': '<path d="m16 16 2 2 4-4"/><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"/><path d="M7.5 4.27l9 5.15"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" x2="12" y1="22" y2="12"/>',
+  'truck': '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
+  'dollar-sign': '<line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+  'fuel': '<line x1="3" x2="15" y1="22" y2="22"/><line x1="4" x2="14" y1="9" y2="9"/><path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18"/><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5"/>',
+  'gauge': '<path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/>',
+  'percent': '<line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>',
+  'receipt': '<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/>',
+  'target': '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+  'calculator': '<rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>',
+  'receipt-text': '<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M14 8H8"/><path d="M16 12H8"/><path d="M13 16H8"/>',
+  'trending-up': '<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
+  'wallet': '<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>',
+  'circle-dollar-sign': '<circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/>',
+  'badge-dollar-sign': '<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/>'
+};
+function svgOf(name) { return '<svg viewBox="0 0 24 24" aria-hidden="true">' + ICONS[name] + '</svg>'; }
+function applyIcons() { qsa('i[data-ic]').forEach(function (e) { e.innerHTML = svgOf(e.getAttribute('data-ic')); }); }
 
 function detectLang() {
   var c = '';
@@ -579,7 +640,11 @@ function el(tag, cls, text) {
   if (text !== undefined) e.textContent = text;
   return e;
 }
-function stopsText(n) { return n + (n === 1 ? ' Stop' : ' Stops'); }
+function stopsText(n) {
+  if (lang === 'en') return n + ' ' + (n === 1 ? L('st1') : L('st2'));
+  var a = n % 10, b = n % 100;
+  return n + ' ' + (a === 1 && b !== 11 ? L('st1') : (a >= 2 && a <= 4 && (b < 12 || b > 14)) ? L('st2') : L('st5'));
+}
 function routeText(t) {
   if (t.s === undefined && !t.p && !t.v) return L('noRoute');
   var n = t.s || 0;
@@ -615,12 +680,15 @@ function rpmOf(t) {
   var r = calcTrip(t);
   return r.miles > 0 ? r.profit / r.miles : null;
 }
-function goal() { var g = parseFloat(settings.t); return isFinite(g) && g > 0 ? g : 0; }
+function goalMode() { return settings.tm === 'g' ? 'g' : 'n'; }
+function goalOf(m) { var g = parseFloat(settings[m === 'g' ? 'tg' : 't']); return isFinite(g) && g > 0 ? g : 0; }
+function goal() { return goalOf(goalMode()); }
 
 function calcForm() {
   var t = { a: num('lm'), b: num('dm'), r: num('lr'), f: num('fp'), g: num('mg'), c: num('cp'), x: num('ex') };
   var r = calcTrip(t);
   $('mgerr').textContent = (t.g > 0 || r.miles === 0) ? '' : L('mpgErr');
+  $('rg').textContent = money2(r.gross);
   $('rf').textContent = money2(r.fuel);
   $('rc').textContent = money2(r.comp);
   $('re').textContent = money2(r.other);
@@ -629,38 +697,55 @@ function calcForm() {
   var neg = r.profit < 0;
   $('rp').style.color = neg ? 'var(--red2)' : 'var(--mint)';
   $('pbox').style.background = neg ? 'rgba(242,121,124,0.12)' : 'var(--mint-soft)';
-  $('rm').textContent = r.miles > 0 ? L('milesLine', Math.round(r.miles), money2(r.profit / r.miles)) : '';
+  $('rgr').textContent = r.miles > 0 ? money2(r.gross / r.miles) : '—';
+  $('rnr').textContent = r.miles > 0 ? money2(r.profit / r.miles) : '—';
+  $('rnr').style.color = r.miles > 0 ? (neg ? 'var(--red2)' : 'var(--mint)') : 'var(--mut)';
+  qsa('#gm button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-m') === goalMode()); });
   renderBroker(t, r);
   return t;
+}
+
+function icoEl(name, big) {
+  var i = el('i', 'ic' + (big ? ' big' : ''));
+  i.innerHTML = ICONS[name] ? svgOf(name) : '';
+  return i;
 }
 
 function renderBroker(t, r) {
   var box = $('bk');
   box.innerHTML = '';
   box.classList.remove('ok');
-  var g = num('gl');
-  if (g <= 0) { box.appendChild(el('div', 'note', L('bkSet'))); box.firstChild.style.marginTop = '0'; return; }
-  box.appendChild(el('h3', '', L('bkTitle')));
-  if (r.miles <= 0 || t.g <= 0) { box.appendChild(el('div', 'note', L('bkNeed'))); return; }
-  if (t.c >= 100) { box.appendChild(el('div', 'note', L('bkImp'))); return; }
-  var cur = r.profit / r.miles;
+  var g = num('gl'), gm = goalMode(), mname = gm === 'g' ? 'Gross' : 'Net';
+  if (g <= 0) { var n0 = el('div', 'note', L('bkSet')); n0.style.marginTop = '0'; box.appendChild(n0); return; }
+  var h = el('h3', 'hh');
+  h.appendChild(icoEl('target'));
+  h.appendChild(el('span', '', L('bkTitle')));
+  box.appendChild(h);
+  if (r.miles <= 0 || (gm === 'n' && t.g <= 0)) { box.appendChild(el('div', 'note', L('bkNeed'))); return; }
+  if (gm === 'n' && t.c >= 100) { box.appendChild(el('div', 'note', L('bkImp'))); return; }
+  var cur = gm === 'g' ? r.gross / r.miles : r.profit / r.miles;
+  var curLabel = gm === 'g' ? L('bkCurG') : L('bkCurN');
   if (cur >= g - EPS) {
     box.classList.add('ok');
-    box.appendChild(el('div', 'okt', L('bkMet')));
+    box.appendChild(el('div', 'okt', L('bkMet', mname)));
     box.appendChild(rowEl(L('bkGoal'), money2(g) + '/mi'));
-    box.appendChild(rowEl(L('bkCur'), money2(cur) + '/mi', 'var(--mint)'));
+    box.appendChild(rowEl(curLabel, money2(cur) + '/mi', 'var(--mint)'));
     return;
   }
-  var req = (g * r.miles + r.fuel + r.other) / (1 - t.c / 100);
+  var req = gm === 'g' ? g * r.miles : (g * r.miles + r.fuel + r.other) / (1 - t.c / 100);
   var rec = Math.ceil(req / 10 - EPS) * 10;
-  box.appendChild(rowEl(L('bkGoal'), money2(g) + '/mi'));
-  box.appendChild(rowEl(L('bkCur'), money2(cur) + '/mi', cur < 0 ? 'var(--red2)' : null));
+  box.appendChild(rowEl(L('bkGoal') + ' (' + mname + ')', money2(g) + '/mi'));
+  box.appendChild(rowEl(curLabel, money2(cur) + '/mi', cur < 0 ? 'var(--red2)' : null));
   var rc = el('div', 'rec');
-  rc.appendChild(el('span', '', L('bkRec')));
+  var rl = el('span', 'lb');
+  rl.style.cssText = 'display:flex;align-items:center;gap:6px';
+  rl.appendChild(icoEl('badge-dollar-sign'));
+  rl.appendChild(el('span', '', L('bkRec')));
+  rc.appendChild(rl);
   rc.appendChild(el('span', 'big', money(rec)));
   box.appendChild(rc);
   box.appendChild(el('div', 'ask', t.r > 0 ? L('bkMore', money(rec - t.r)) : L('bkAsk', money(rec))));
-  box.appendChild(el('div', 'note', L('bkNote')));
+  box.appendChild(el('div', 'note', L('bkNote') + (gm === 'n' ? ' ' + L('bkNetNote') : '')));
 }
 
 function markDirty() {
@@ -1061,11 +1146,11 @@ function explainEl(kind, t) {
   if (kind === 'profit') {
     box.appendChild(rowEl(L('xpGross'), money2(r.gross)));
     box.appendChild(rowEl(L('xpExp'), '-' + money2(r.costs).replace('-', ''), 'var(--red2)'));
-    box.appendChild(rowEl(L('xpNet'), money2(r.profit), col, 'tot'));
+    box.appendChild(rowEl(L('rNet'), money2(r.profit), col, 'tot'));
     box.appendChild(el('div', 'fm', L('fmProfit')));
   } else {
-    box.appendChild(rowEl(L('xpNet'), money2(r.profit), col));
-    box.appendChild(rowEl(L('xpMiles'), String(miles)));
+    box.appendChild(rowEl(L('rNet'), money2(r.profit), col));
+    box.appendChild(rowEl(L('miTotal'), String(miles)));
     box.appendChild(rowEl('Net RPM', miles > 0 ? money2(r.profit / miles) : '—', col, 'tot'));
     box.appendChild(el('div', 'fm', L('fmRpm')));
     if (kind === 'worst') box.appendChild(el('div', 'wn', L('wnWorst')));
@@ -1104,37 +1189,37 @@ function renderDetail(ref) {
   }
 
   box.appendChild(section(L('secRoute'), [
-    rowEl('Pickup', t.p || L('notSet')),
-    rowEl('Delivery', t.v || L('notSet')),
-    rowEl('Stops', t.s === undefined ? L('notSet') : String(t.s))
+    rowEl(L('lblPickup'), t.p || L('notSet')),
+    rowEl(L('lblDelivery'), t.v || L('notSet')),
+    rowEl(L('lblStops'), t.s === undefined ? L('notSet') : String(t.s))
   ]));
   box.appendChild(section(L('secMiles'), [
-    rowEl('Loaded Miles', String(t.a)),
-    rowEl('Deadhead Miles', String(t.b)),
-    rowEl('Total Miles', String(miles), null, 'tot')
+    rowEl(L('miLoaded'), String(t.a)),
+    rowEl(L('miDead'), String(t.b)),
+    rowEl(L('miTotal'), String(miles), null, 'tot')
   ]));
   box.appendChild(section(L('secIncome'), [
-    rowEl('Load Rate (Gross)', money2(r.gross), '#fff'),
+    rowEl(L('rLoad'), money2(r.gross), '#fff'),
     rowEl('Gross RPM', miles > 0 ? money2(r.gross / miles) : '—')
   ]));
   box.appendChild(section(L('secFuel'), [
-    rowEl('Diesel Price', money2(t.f) + ' / gal'),
-    rowEl('Truck MPG', String(t.g)),
-    rowEl('Estimated Gallons', (t.g > 0 ? miles / t.g : 0).toFixed(1)),
-    rowEl('Total Fuel Cost', money2(r.fuel), 'var(--red2)', 'tot')
+    rowEl(L('dDiesel'), money2(t.f) + ' ' + L('perGal')),
+    rowEl(L('mpgL'), String(t.g)),
+    rowEl(L('dGal'), (t.g > 0 ? miles / t.g : 0).toFixed(1)),
+    rowEl(L('dFuelTot'), money2(r.fuel), 'var(--red2)', 'tot')
   ]));
   box.appendChild(section(L('secComm'), [
-    rowEl('Company Commission (' + (Math.round(t.c * 100) / 100) + '%)', money2(r.comp), 'var(--red2)'),
-    rowEl('Other Trip Expenses', money2(r.other), 'var(--red2)'),
-    rowEl('Total Trip Expenses', money2(r.costs), 'var(--red2)', 'tot')
+    rowEl(L('rComm') + ' (' + (Math.round(t.c * 100) / 100) + '%)', money2(r.comp), 'var(--red2)'),
+    rowEl(L('rOther'), money2(r.other), 'var(--red2)'),
+    rowEl(L('rTotal'), money2(r.costs), 'var(--red2)', 'tot')
   ]));
 
   var col = r.profit < 0 ? 'var(--red2)' : 'var(--mint)';
   var fin = el('div', 'final');
-  fin.appendChild(rowEl('Gross Revenue', money2(r.gross)));
-  fin.appendChild(rowEl('Total Trip Expenses', '-' + money2(r.costs).replace('-', ''), 'var(--red2)'));
+  fin.appendChild(rowEl(L('dRev'), money2(r.gross)));
+  fin.appendChild(rowEl(L('rTotal'), '-' + money2(r.costs).replace('-', ''), 'var(--red2)'));
   var np = el('div', 'rw tot');
-  np.appendChild(el('span', '', 'Net Trip Profit'));
+  np.appendChild(el('span', '', L('rNet')));
   var npv = el('span', '', money2(r.profit));
   npv.style.color = col;
   npv.style.fontSize = '24px';
@@ -1210,6 +1295,7 @@ function renderTrips() {
   $('tn').style.color = col;
 
   var dw = daysWithoutTrips(rg, s.items);
+  $('pill').hidden = !isCust;
   $('pill').classList.toggle('neutral', !dw);
   $('pillv').textContent = dw ? L('pillVal', dw.without, dw.total) : '—';
 
@@ -1239,9 +1325,9 @@ function renderTrips() {
       r.onclick = function () { sub.hidden = !sub.hidden; };
     }
   }
-  addRow('Fuel', s.fuel, '#E5484D');
-  addRow('Company Commission', s.comp, '#F2797C');
-  addRow('Other Trip Expenses', s.other, '#F6A5A7');
+  addRow(L('rFuel'), s.fuel, '#E5484D');
+  addRow(L('rComm'), s.comp, '#F2797C');
+  addRow(L('rOther'), s.other, '#F6A5A7');
   s.gen.forEach(function (g, i) { addRow(g.def.n, g.total, GEN_COLORS[i % GEN_COLORS.length], g.ch); });
 
   var ring = $('ring');
@@ -1322,7 +1408,8 @@ function closeCal() {
 function dayAgg() {
   var m = {};
   listAll(chunks).forEach(function (p) {
-    var r = calcTrip(p.t), a = m[p.t.d] || (m[p.t.d] = { profit: 0, miles: 0 });
+    var r = calcTrip(p.t), a = m[p.t.d] || (m[p.t.d] = { profit: 0, miles: 0, gross: 0 });
+    a.gross += r.gross;
     a.profit += r.profit;
     a.miles += r.miles;
   });
@@ -1334,7 +1421,7 @@ function dayColor(a) {
   if (a.profit < 0) return 'bad';
   var g = goal();
   if (!g) return 'good';
-  return a.miles > 0 && a.profit / a.miles >= g - EPS ? 'good' : 'mid';
+  return a.miles > 0 && (goalMode() === 'g' ? a.gross : a.profit) / a.miles >= g - EPS ? 'good' : 'mid';
 }
 
 function renderCal() {
@@ -1634,6 +1721,10 @@ function applyLang() {
   document.documentElement.lang = lang;
   qsa('[data-i]').forEach(function (e) { e.textContent = L(e.getAttribute('data-i')); });
   qsa('[data-al]').forEach(function (e) { e.setAttribute('aria-label', L(e.getAttribute('data-al'))); });
+  qsa('[data-ph]').forEach(function (e) { e.placeholder = L(e.getAttribute('data-ph')); });
+  var dl = $('xnames');
+  dl.innerHTML = '';
+  L('names').forEach(function (n) { var o = document.createElement('option'); o.value = n; dl.appendChild(o); });
   qsa('.lbtn').forEach(function (b) {
     b.querySelector('.lr').classList.toggle('on', lang === 'ru');
     b.querySelector('.le').classList.toggle('on', lang === 'en');
@@ -1675,18 +1766,21 @@ $('plus').onclick = function () { setStops(stops + 1); markDirty(); };
 ['dt', 'lm', 'dm', 'lr', 'fp', 'mg', 'cp', 'ex'].forEach(function (id) {
   $(id).addEventListener('input', function () { calcForm(); markDirty(); });
 });
-var goalTimer = null;
-$('gl').addEventListener('input', function () {
-  calcForm();
-  clearTimeout(goalTimer);
-  goalTimer = setTimeout(commitGoal, 500);
-});
-$('gl').addEventListener('blur', commitGoal);
 function commitGoal() {
-  clearTimeout(goalTimer);
-  var g = num('gl');
-  if (g !== (settings.t || 0)) saveSettings({ t: g });
+  var g = num('gl'), key = goalMode() === 'g' ? 'tg' : 't';
+  if (g !== (settings[key] || 0)) { var o = {}; o[key] = g; saveSettings(o); }
 }
+$('gl').addEventListener('input', function () { commitGoal(); calcForm(); });
+qsa('#gm button').forEach(function (b) {
+  b.onclick = function () {
+    var m = b.getAttribute('data-m');
+    if (m === goalMode()) return;
+    commitGoal();
+    saveSettings({ tm: m });
+    $('gl').value = goalOf(m) || '';
+    calcForm();
+  };
+});
 $('save').onclick = saveTrip;
 $('clr').onclick = function () {
   ['lm', 'dm', 'lr', 'ex'].forEach(function (id) { $(id).value = ''; });
@@ -1748,6 +1842,20 @@ $('xstop').onclick = stopExpense;
 $('xdel').onclick = deleteExpense;
 if (tg && tg.BackButton) { try { tg.BackButton.onClick(goBack); } catch (e) {} }
 
+var navTimer = null;
+var touchUi = !!(window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+document.addEventListener('focusin', function (e) {
+  if (touchUi && /^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) { clearTimeout(navTimer); document.querySelector('nav').style.display = 'none'; }
+});
+document.addEventListener('pointerdown', function (e) {
+  var a = document.activeElement;
+  if (a && /^(INPUT|SELECT|TEXTAREA)$/.test(a.tagName) && !/^(INPUT|SELECT|TEXTAREA|LABEL)$/.test(e.target.tagName)) a.blur();
+});
+document.addEventListener('focusout', function () {
+  clearTimeout(navTimer);
+  navTimer = setTimeout(function () { document.querySelector('nav').style.display = ''; }, 150);
+});
+
 function fillDefaults() {
   var today = ymd(new Date());
   $('dt').value = today;
@@ -1755,7 +1863,8 @@ function fillDefaults() {
   if (settings.f) $('fp').value = settings.f;
   if (settings.g) $('mg').value = settings.g;
   if (settings.c !== undefined && settings.c !== null) $('cp').value = settings.c;
-  if (settings.t) $('gl').value = settings.t;
+  var g0 = goalOf(goalMode());
+  if (g0) $('gl').value = g0;
 }
 
 store.getAll(function (all) {
@@ -1771,6 +1880,7 @@ store.getAll(function (all) {
   fillDefaults();
   applyLang();
 });
+applyIcons();
 fillDefaults();
 applyLang();
 </script>
