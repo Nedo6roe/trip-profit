@@ -187,7 +187,6 @@ nav button.on{color:var(--mint)}
     <div class="f"><label for="mg"><i class="ic" data-ic="gauge"></i><span data-i="mpgL"></span></label><input id="mg" type="number" inputmode="decimal" min="0" step="0.1" data-ph="phMpg"><div class="err" id="mgerr"></div></div>
     <div class="f"><label for="cp"><i class="ic" data-ic="percent"></i><span data-i="commPct"></span></label><input id="cp" type="number" inputmode="decimal" min="0" data-ph="phPct"></div>
     <div class="f full"><label for="ex"><i class="ic" data-ic="receipt"></i><span data-i="otherLbl"></span></label><input id="ex" type="number" inputmode="decimal" min="0" data-ph="phSum"></div>
-    <div class="f full"><label for="gl"><i class="ic" data-ic="target"></i><span data-i="goalLbl"></span></label><div class="goalrow"><input id="gl" type="number" inputmode="decimal" min="0" step="0.01" data-ph="phGoal"><div class="seg" id="gm"><button type="button" data-m="n" data-i="gNet"></button><button type="button" data-m="g" data-i="gGross"></button></div></div></div>
   </div>
 
   <div class="card">
@@ -204,8 +203,6 @@ nav button.on{color:var(--mint)}
     <div class="pbox" id="pbox"><span class="lbl"><i class="ic big" data-ic="circle-dollar-sign"></i><span data-i="rNet"></span></span><span class="big" id="rp">$0.00</span></div>
     <div class="note" style="margin-top:6px;font-size:12px" data-i="calcNote"></div>
   </div>
-
-  <div class="bk" id="bk"></div>
 
   <button class="btn-m" id="save"></button>
   <div class="msg" id="saved"></div>
@@ -682,7 +679,7 @@ function rpmOf(t) {
 }
 function goalMode() { return settings.tm === 'g' ? 'g' : 'n'; }
 function goalOf(m) { var g = parseFloat(settings[m === 'g' ? 'tg' : 't']); return isFinite(g) && g > 0 ? g : 0; }
-function goal() { return goalOf(goalMode()); }
+function goal() { return 0; }
 
 function calcForm() {
   var t = { a: num('lm'), b: num('dm'), r: num('lr'), f: num('fp'), g: num('mg'), c: num('cp'), x: num('ex') };
@@ -700,8 +697,6 @@ function calcForm() {
   $('rgr').textContent = r.miles > 0 ? money2(r.gross / r.miles) : '—';
   $('rnr').textContent = r.miles > 0 ? money2(r.profit / r.miles) : '—';
   $('rnr').style.color = r.miles > 0 ? (neg ? 'var(--red2)' : 'var(--mint)') : 'var(--mut)';
-  qsa('#gm button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-m') === goalMode()); });
-  renderBroker(t, r);
   return t;
 }
 
@@ -1766,21 +1761,6 @@ $('plus').onclick = function () { setStops(stops + 1); markDirty(); };
 ['dt', 'lm', 'dm', 'lr', 'fp', 'mg', 'cp', 'ex'].forEach(function (id) {
   $(id).addEventListener('input', function () { calcForm(); markDirty(); });
 });
-function commitGoal() {
-  var g = num('gl'), key = goalMode() === 'g' ? 'tg' : 't';
-  if (g !== (settings[key] || 0)) { var o = {}; o[key] = g; saveSettings(o); }
-}
-$('gl').addEventListener('input', function () { commitGoal(); calcForm(); });
-qsa('#gm button').forEach(function (b) {
-  b.onclick = function () {
-    var m = b.getAttribute('data-m');
-    if (m === goalMode()) return;
-    commitGoal();
-    saveSettings({ tm: m });
-    $('gl').value = goalOf(m) || '';
-    calcForm();
-  };
-});
 $('save').onclick = saveTrip;
 $('clr').onclick = function () {
   ['lm', 'dm', 'lr', 'ex'].forEach(function (id) { $(id).value = ''; });
@@ -1863,8 +1843,6 @@ function fillDefaults() {
   if (settings.f) $('fp').value = settings.f;
   if (settings.g) $('mg').value = settings.g;
   if (settings.c !== undefined && settings.c !== null) $('cp').value = settings.c;
-  var g0 = goalOf(goalMode());
-  if (g0) $('gl').value = g0;
 }
 
 store.getAll(function (all) {
